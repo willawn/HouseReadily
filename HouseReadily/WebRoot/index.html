@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ice="http://ns.adobe.com/incontextediting">
+<head>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>随手房 - 房地产经纪人必备的手机应用</title>
+<meta name="keywords" content="随手房,房源管理,客源管理,房地产中介手机,房地产经纪人助手,房地产经纪人手机应用" />
+<meta name="description" content="随手房专为房地产中介经纪人而生的一套房客源管理系统，地产经纪人必备的手机应用软件，随时随地跟进房源、客源信息记录，维系客户绝不遗忘，帮助房地产经纪人快速查找所需，简洁至极！房产经纪人力荐的客户、房源手机管理录入存储应用。" />
+<script src="js/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+<!--
+<script type="text/javascript" async="" src="ga.js"></script>
+<script type="text/javascript" src="gongneng.js"></script>
+-->
+<!--<link href="Untitled-3.css" type="text/css" rel="stylesheet" />-->
+<link rel="stylesheet" href="css/reset.css?2.0" />
+<link rel="stylesheet" href="css/common.css?2.0" />
+<!--
+<link rel="stylesheet" href="gongneng.css?2.0" />
+-->
+<script type="text/javascript" src="js/browser.js"></script>
+<script type="text/javascript">
+function adisplay(){
+	document.getElementById("and_lay").style.display="block"; 
+}
+function adisappear(){
+	document.getElementById("and_lay").style.display="none"; 
+}
+if(browser.versions.ios || browser.versions.android) {
+	window.location = "m.html";
+}
+</script>
+
+
+<style>
+
+/*-------------------------------------------------------------------------banner代码---------------------------*/
+#banner,#banner_free {
+	width: auto;
+	height: 632px;
+	border-bottom: #3ba5e1 1px solid;
+}
+.banner_m {
+	width: 960px;
+	background: url(images/main.jpg) left top no-repeat;
+	margin: 0 auto;
+	height: 632px;
+	
+	
+}
+#banner_free .banner_m{
+	background: url(../img/banner_free.png) left top no-repeat;
+}
+.banner_m p {
+	font-size: 15px;
+	color: #3b648a;
+	line-height: 19px;
+	margin-left: 41px;
+}
+.banner_m a:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+.buy {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	cursor: pointer;
+	display: block;
+	background: url(../img/buy.png) no-repeat left top;
+}
+.download {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	margin-right: 5px;
+	cursor: pointer;
+	display: inline-block;
+	text-indent:-999em;
+	background: url(../img/download.png) no-repeat left top;
+	vertical-align: text-bottom;
+}
+.download_p {
+	color: #fff;
+	position: relative;
+	left: 42px;
+	top: 20px;
+	text-decoration: none;
+}
+.download_p:hover {
+	text-decoration: underline;
+}
+.download:hover {
+	
+}
+/*-------------------------------------------------------------------------content代码---------------------------*/
+#content {
+	background: url(../img/m_bg.png) repeat-x left top;
+	width: auto;
+	height: 310px;
+	border-top: #FFF solid 1px;
+	border-bottom: #e6e6e6 dashed 1px;
+}
+.content_m {
+	width: 960px;
+	margin: 0 auto;
+	padding: 60px 0px 0px 50px;
+	;	}
+.content_mm {
+	float: left;
+	width: 265px;
+	display: inline;
+}
+.content_mm h2 {
+	border-left: #9acce8 solid 10px;
+	color: #068bb7;
+	font-size: 24px;
+	font-weight: normal;
+	padding-left: 8px;
+	margin: 0px;
+}
+.content_mm p {
+	color: #7f858a;
+	font-size: 15px;
+	line-height:25px;
+	margin-top: 5px;
+}
+.content_mm img {
+	margin-left: 5px;
+}
+.link {
+	margin-top: 54px;
+}
+.link_l {
+	font-size: 14px;
+	float: left;
+	display: inline;
+	color: #7f858a;
+}
+.link_l img {
+	margin: 2px 5px 1px 10px;
+	vertical-align: middle;
+	float: left;
+}
+.link_l a {
+	color: #7f858a;
+	float: left;
+}
+.link_l span {
+	float: left;
+	color: #068bb7;
+}
+.link_l a:hover {
+	color: #333;
+}
+.link_r a {
+	float: right;
+	color: #0f7ce2;
+	text-decoration: none;
+	font-size: 14px;
+	margin-right: 80px;
+	display: inline;
+}
+.link_r a:hover {
+	text-decoration: underline;
+	color: #25a0ff;
+}
+/*-------------------------------------------------------------------------footer代码---------------------------*/
+#copyright a {
+	color: #6d6d6d;
+	text-decoration: none;
+}
+#copyright {
+	width: 960px;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 10px;
+	color: #ccc;
+	font-size: 12px;
+}
+.footer {
+	height: 50x;
+	padding-top: 15px;
+}
+.menu{height:40px;background:url(images/menu_bg_1.gif) no-repeat -99px bottom;z-index:100;}
+.li_3{position:relative;z-index:100;}   
+.li_3_content{position:absolute;top:20px;left:0px;width:127px;line-height:40px;z-index:99;display:none;height:188px;*top:18px;}
+.li_3_content dt{height:17px;border-bottom:3px solid #417BAD;*height:19px;}
+.li_3_content dd{border-left:1px solid #E6E4E3;border-right:1px solid #E6E4E3;padding: 0 8px;background: #ffffff url(images/menu.gif) no-repeat bottom;}
+.li_3_content dd a{text-align:center;color:#666666;}
+.li_3_content a:hover{color:#f18336;}
+.iabox .layer{width:204px;background:#fafbfb;height:auto;border:1px solid #c1c1c1;overflow:hidden;z-index:999;position:absolute;border-radius:3px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;webkit-border-top-left-radius:0px;webkit-border-top-left-radius:0px;-webkit-box-shadow: #c1c1c1 0px 2px 2px;-moz-box-shadow: #c1c1c1 0px 2px 2px;box-shadow: #c1c1c1 0px 2px 2px;display:none}
+.iabox .layer li{height:45px;border-top:1px solid #c1c1c1;margin-top:-1px;}
+.iabox .layer li span{display:block;margin:10px 0 0 10px;padding-left:45px;background:url(images/common_icons.png) no-repeat;font-size:14px;height:31px;line-height:30px;overflow:hidden}
+.iabox .layer li span a{color:#4c4c4c}
+.iabox .layer li .wandou{background-position:7px bottom}
+.iabox .layer li .qh360{background-position:7px -31px}
+.iabox .layer li .ipho{background-position:7px top}
+.iabox .layer .erwei{padding:10px 0;height:auto;text-align:center}
+.iabox .layer li p{line-height:16px;color:#4c4c4c;font-size:14px;}
+.iabox .layer .erwei p{padding:0}
+.iabox .layer .erwei p a{font-size:20px;line-height:20px;font-family:"Microsoft Yahei ";color:#3063d0}
+
+</style>
+
+<script>
+$(function(){
+        $(".menu li").hover(
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current = $(".menu li").index($(".first"));
+                        $(".menu").css("background-position",(120*current+1)+"px"+" bottom");
+                        $(".current").removeClass("lihover");
+                        $(".menu li").removeClass("first");
+                        $(this).addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+if(num != 4){
+                        	$(".menu").stop().animate({backgroundPosition:(120*num+1)+"px"+" bottom"},120*len);
+}
+else
+{
+ $(".menu").stop().animate({backgroundPosition:(120*num+1+40)+"px"+" bottom"},120*len);
+}
+              //          if(num == 3){
+              //                  $(".li_3_content").show();
+              //          };
+        /*      },
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(86*current+1)+"px"+" bottom"},100*len); */
+                }
+        );
+        
+        $(".li_3").hover(
+                function()
+                {
+
+                        $(".li_3_content").fadeIn(0);
+                },
+                function()
+                {
+                        $(".li_3_content").fadeOut(500,function(){
+$(".li_3_content").css("display","none");
+});
+                }
+        );
+
+
+        $(".menu").mouseleave(function(){
+        				var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(180*current+1)+"px"+" bottom"},120*len);
+        });
+$(".noclick").click(function(event){
+event.preventDefault();
+});
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+<div class="header">
+<!--    <ul class="menu">
+      <li ><a href="/" target="_self">首页</a></li>
+      <li class="licurrent"><a href="features.php" target="_self">功能</a></li>
+      <li ><a href="getrom.php" target="_self">下载</a></li>
+      <li><a href="http://zhuti.xiaomi.com/" target="_blank">主题</a></li>
+      <li><a class="licurrent" href="http://app.xiaomi.com/" target="_blank">应用</a></li>
+      <li><a  class="noborder " href="index.php" target="_self">论坛</a></li>
+    </ul>-->
+
+
+
+<ul class="menu" style="background-position: 0px 100%; padding-top:10px;  ">
+        <li  class="first current" ><a href="index.html" target="_self">首页</a></li>
+      <li class=""><a href="function.html" target="_self">功能介绍</a></li>
+      <li class=""><a href="feedback.html" target="_self">用户反馈</a></li>
+      <li class=""><a href="about.html" target="_self">关于我们</a></li>
+
+    </ul>
+
+
+
+
+
+    <a href="http://www.suishoufang.com/index.html" title="随手房" > <img class="miui_logo" src="images/logo.png" alt="随手房 移动产品中心"></a>
+  </div>
+  
+
+    <div id="banner" style="background:url(images/bg.png)">
+    	<div class="banner_all">
+
+    
+ <div class="banner_all">
+        	<div class="banner_m" >
+         
+<div style="padding-top:525px; margin-left:175px; margin-right:auto;">
+<a href="https://itunes.apple.com/us/app/sui-shou-fang/id594386576?mt=8" target="_blank" title="随手房iPhone下载" >
+<img src="images/iphone.png" alt="随手房iphone版" />
+</a>
+<img  style="margin-left:50px" src="images/down_android.png"  onmouseover="adisplay()" onmouseout="adisappear()" alt="随手房安卓版" />
+
+
+<div  class="iabox" style="margin-top:-205px; margin-left:600px; margin-right:auto;">
+<ul  class="layer" id="and_lay" onmouseover="adisplay()" onmouseout="adisappear()">
+               
+                   
+                   <li class="erwei"><img src="images/down_android_ew.png" alt="随手房安卓版" /><p><a href="http://suishoufang.com/app/android/easyhouse.apk" title="随手房Android下载">直接下载apk</a></p></li>
+                   <li><p>或各大应用市场<br/>搜索“随手房”</p></li>
+
+              </ul>
+</div>
+</div>
+
+             
+	  </div>
+        </div>
+        
+        <div id="content">
+    	<div class="content_m">        	
+            <div class="content_mm">
+            	<h2>终生免费</h2>
+                <p>地产经纪人必备手机应用之一<br />无需抱着小本子,怕丢又不私密</p>
+            </div>
+            
+            <img style="float:left;margin-right:60px;" src="images/line.png" />
+            
+            <div class="content_mm">
+            	<h2>随时随地查房源.客源</h2>
+                <p>还拿着小本子查客户信息？out了！<br />
+                Anyway、Anytime、Anywhere<br />
+                随处随心随时
+</p>
+            </div>
+            
+            <img style="float:left;margin-right:60px;"  src="images/line.png" />
+            
+            <div class="content_mm">
+            	<h2>快速! 安全! 私密!</h2>
+                <p>客户分类管理，清晰明了
+<br />支持跟进记录，维系客户绝不遗忘
+<br />快速查找所需，简捷至极
+<br />用属于自己专用的房客源系统！</p>
+            </div>
+            
+            <div style="clear:both"></div>
+     
+        </div>
+    </div><!--content end-->
+
+        <div class="clear"></div>
+    </div><!--banner end-->
+   
+ 
+ 
+  <div class="footer"> 
+       <div id="copyright" style="padding-bottom:20px">
+        <p id="copyRightEn"><font color="#666666">Copyright © 2013 suishoufang.com. All Rights Reserved.</font></p>
+        </div>
+	</div>
+ 
+  <!-- end .container --></div>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc6910b18d58791b7f6b6fb7972e22aa1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

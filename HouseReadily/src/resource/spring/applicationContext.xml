@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.0.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!-- 使用2.0声明式事务 -->
+	<!--spring-标签之tx:advice 标签来指定不同的事务性设置, 配置文件的开头使用了命名空间xmlns:tx-->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="reg*" propagation="REQUIRED" />
+			<tx:method name="verify*" propagation="REQUIRED" />
+			<tx:method name="execute*" propagation="REQUIRED" />
+			<tx:method name="verify*" propagation="REQUIRED" />
+			<!-- 对其它方法要求事务 -->
+			<tx:method name="*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!--spring-标签之tx:advice 标签来指定不同的事务性设置, 配置文件的开头加入了aop命名空间xmlns:aop-->
+	<!--aop:config中定义了所有的AOP设置信息-->
+	<aop:config>
+		<!--
+			aop:pointcut定义了一个切入点,id给出了这个切入点的唯一名字，而expression定义了切入点的表达式
+			只对Biz添加事务支持，因为前面配置的transactionManager是专对Hibernate的事务管理器 。
+		-->
+		<aop:pointcut id="allServiceMethods"
+			expression="execution(* com.huzhiyi.housereadily.biz.impl.*.*(..))" />
+
+		<!-- 织入 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allServiceMethods" />
+	</aop:config>
+
+	<!-- 日志AOP -->
+	<bean id="methodAdive" class="com.huzhiyi.comm.AOPLogBean"></bean>
+	<aop:config>
+		<aop:pointcut id="allMethod"
+			expression="execution(* com.huzhiyi.housereadily.biz.impl.*.*(..))" />
+		<aop:aspect id="logAspect" ref="methodAdive">
+			<aop:around method="intercept" pointcut-ref="allMethod" />
+		</aop:aspect>
+	</aop:config>
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:rest.properties</value>
+				<value>classpath*:datasource.properties</value>
+				<value>classpath*:hibernate.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="HouseReadily" class="com.huzhiyi.spring.SchedulerInitializingBean">
+		<property name="name">
+			<value>HouseReadily</value>
+		</property>
+		<property name="tastyService" ref="tastyService" />
+	</bean>
+</beans>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+html{color:#000;background:#ecf0f1;}
+body { font-size:16px;background:#ecf0f1;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body,button,input,select,textarea{font-family: \5fae\8f6f\96c5\9ed1,Arial,\5b8b\4f53;}
+input,select,textarea{font-size:100%;vertical-align:middle;}
+textarea{ overflow-y:auto;} 
+1table {border-collapse:collapse;border-spacing:0}
+th{text-align:inherit}
+fieldset,img,a img{border:0}
+iframe{display:block}
+abbr,acronym{border:0;font-variant:normal}
+del{text-decoration:line-through}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}
+q:before,q:after{content:''}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+a:hover{text-decoration:underline}
+ins,a{text-decoration:none}
+
+#wide { width:100%; height:100%; text-align:center;}
+#wide .wideTop { position:relative; width:100%; height:128px; background:#26292e url(../images/by.png) 50% 0 no-repeat;}
+#wide .wideTop h1 { display:none;}
+#wide .wideTop .txtBox { position:absolute; top:65px; left:0; padding:5px 0 0 0; line-height:23px; width:100%; height:52px; color:#00c5fe; font-size:0.8em; text-align:center; filter: Alpha(Opacity=50); opacity:0.5; background:#000;}
+#wide .wideTop .btn1 { position:absolute; top:92px; right:30px; line-height:30px; width:65px; height:30px; color:#fff; font-size:1em;}
+#wide .wideTitle { position:relative; width:100%; height:50px;}
+#wide .wideTitle h2 { width:100%; height:50px; line-height:50px; color:#324085; font-size:1em; text-align:center;}
+#wide .wideTitle .btn2 { position:absolute; top:12px; right:30px; line-height:30px; width:65px; height:30px; color:#5e6060; font-size:1em;}
+#wide .widtList { margin:0 auto; width:95%;}
+#wide .widtList .listBable { width:100%; box-shadow:3px 3px 2px #dde1e2;}
+#wide .listBable th { height:45px; color:#fff; font-size:0.8em; text-align:center; background:#3d74c1;}
+#wide .listBable .thRadiusLeft {border-top-left-radius:5px;}
+#wide .listBable .thRadiusRight {border-top-right-radius:5px;}
+#wide .listBable tr td { height:30px; color:#717c82; text-align:center; background:#fff;}
+#wide .listBable tr.odd td { background:#f3f6f9;}
+
+#wide .mainBg { float:right;}
+#wide .numBox { font-size:150%; line-height:180%; color:#fff;}
+#wide .txt1 { font-size:110%; line-height:120%; color:#fff0a8;}
+#wide .txt2 { font-size:160%; line-height:200%; color:#fff0a8;}
+#wide .txt3 { position:absolute; bottom:30%; left:10%; width:80%; max-width:645px;}
+#wide .btnBox { position:absolute; bottom:14%; left:8%; width:85%; max-width:645px;}
+#wide .btnBox img { width:45%; max-width:250px;}
+#wide .btnBox a.btn1 { margin:0 5% 0 0;}
+#wide .foot { position:absolute; bottom:0; left:0; padding:10px 0; width:100%; line-height:1em; color:#e4e4e4; font-size:100%; text-align:center; filter: Alpha(Opacity=50); opacity:0.5; background:#000;}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+<head>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1 user-scalable=0">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" charset="UTF-8" type="text/css" href="css/min.css">
+<title>随手房 - 下载</title>
+<meta content="随手房" name="description">
+<script type="text/javascript" src="js/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/browser.js"></script>
+<script type="text/javascript">
+	var imgMoblie, imgMobileClick;
+	$(document).ready(function(){
+		//$($("#trade-in").children("img")[0]).height($("#trade-in").height());
+		if(browser.versions.ios) {
+			$("#imgMobile").parent().attr("href", "#");
+			imgMoblie = "images/with/xz2.png";
+			imgMobileClick = "images/with/xz1.png";
+			
+			//$("#imgMobile").click();
+		} else if(browser.versions.android) {
+			$("#imgMobile").parent().attr("href", "#");
+			imgMoblie = "images/with/xz2.png";
+			imgMobileClick = "images/with/xz1.png";
+		}
+		$("#imgMobile").attr("src", imgMoblie);
+		
+		orient();
+	});
+	/*window.onload = function(){
+		if(browser.versions.android) {
+			window.location = "http://suishoufang.com/app/android/easyhouse.apk";
+		}
+	}*/
+	
+	function orient() {
+		if (window.orientation == 90 || window.orientation == -90) {
+			//ipad、iphone竖屏；Andriod横屏
+			$("#footer").attr("style", "width:100%;");
+			$("#img1").attr("style", "");
+			$("#img2").attr("style", "");
+			$("#imgMobile").attr("style", "");
+			$("#sp").attr("style", "font-size:30px;");
+			return false;
+		} else if (window.orientation == 0 || window.orientation == 180) {
+			//ipad、iphone横屏；Andriod竖屏
+			$("#footer").attr("style", " left:0; bottom:0; width:100%;");
+			$("#img1").attr("style", "width:35%;height: 9%;");
+			$("#img2").attr("style", "width:75%;height: 68%;");
+			$("#imgMobile").attr("style", "width:35%;height: 8%;");
+			$("#sp").attr("style", "font-size:18px;");
+			return false;
+		}
+	}
+	//用户变化屏幕方向时调用
+	$(window).bind('orientationchange', function(e){
+		orient();
+	});
+	
+	// 改变下载按钮样式
+	$("#imgMobile").mouseover(function(){
+		$(this).attr("src", imgMoblie);
+	});
+	$("#imgMobile").mouseout(function(){
+		$(this).attr("src", imgMobileClick);
+	});
+	$("#imgMobile").mousedown(function(){
+		$(this).attr("src", imgMoblie);
+	});
+	$("#imgMobile").mouseup(function(){
+		$(this).attr("src", imgMobileClick);
+	});
+</script>
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-y" style="height:100%;">
+<!-- Start of home page -->
+<div data-role="page" id="home" data-url="/en/mobile/" data-title="" tabindex="0" class="ui-page ui-body-y ui-page-header-fixed ui-page-active" style="padding-top: 0px; height:100%;">
+  
+  <!-- /header -->
+  <div data-role="content" class="ui-content ui-body-y" role="main" id="main" style="background-image: url('images/with/by1.png');">
+	
+    <div style="text-align: center;margin-top: 20px;"><img id="img1" src="images/with/top.png" style="width:35%;height: 9%"></div>
+    	<div style="text-align: center;position: relative;">
+    	<img id="img2" src="images/with/5.png" style="width:75%;height: 68%;">
+    		<div class="downloadCount">
+		    	<span id="sp">5.3 万</span>
+		    </div>
+    	</div>
+    	<div style="text-align: center;margin-bottom: 10px;;">
+    	  <a id="aImgMobile" href="#">
+	  	  	<img id="imgMobile" src="images/with/xz1.png" style="width:35%;height: 8%;">
+	      </a>
+    	</div>
+    
+    <div id="footer" data-role="footer" class="ui-footer ui-bar-y" role="contentinfo" style=" left:0; bottom:0; width:100%;">
+  	<p style="color:#385c82;">我们的用户遍布世华、链家、中原、中联等各大地产公司</p>
+    </div>
+  </div>
+  <!-- /content -->
+  <!-- footer -->
+  
+  <!-- 
+  <script type="text/javascript">
+	// Fix for the Galley Images on the first load.
+	$(function() {
+		var flag = true;
+		if(flag && $('.caroufredsel_wrapper')) {
+			var h = $('.list_carousel').height()-35+'px';
+			$('.caroufredsel_wrapper').height(h);
+			//alert($('.caroufredsel_wrapper').height());
+			flag = false;
+		}
+	});
+</script>
+-->
+  <!-- /footer -->
+  <!--
+  <div id="appModeNote"> <em>Go Full Screen!</em> <span>Use the "Add to Home Screen" Feature</span> </div>
+  <script type="text/javascript">
+		$('#home').die('pageshow').live('pageshow', function(){
+			//fix for calling .die('pageshow') which removes bind in funcs.js
+			context.vehicle = '';
+			context.model = '';
+			mobile.updateVehContext();
+			mobile.tracking.pageTrack();
+	
+			SlidePanel.buildFromHTML('home'); 
+		});
+    </script>
+    -->
+  <style type="text/css">
+    	#home .page-nav{ padding-top: 0; }
+	    #home .page-promo #sod{width:100%;}
+		#home .page-promo{margin-top:10px;}
+		#home .ui-content{ position:relative; top:-1px; background: #7899B6; }
+		
+		#home .slide-panel > div{ position:relative; }
+		
+		#home .slide-panel > .slide-panel-indicator {
+			background: none repeat scroll 0 0 #7899B6;
+			float: right;
+			margin: -20px 0.5% 0 0;
+			padding: 5px;
+			position: relative;
+			text-align: center;
+			top: 30px;
+			width: 60px;
+			z-index:10;
+			border-radius: 10px;
+		}
+		
+		#home .slide-panel .ui-btn {
+			font-size: 12px;
+			position: absolute;
+			left:5%;
+			bottom:3%;
+		}
+		#home .slide-panel .a .ui-btn { left: 30%; }
+		
+		#home .slide-panel > div > span {
+			position: absolute; 
+			text-shadow: none; 
+			color: #FFF;
+			width: 100%; 
+			left: 0px; 
+			font-size: 13px; 
+			bottom: 16%;
+		}
+		
+		#home #home-gallery .ui-btn-inner{ padding: 0.6em 0.6em 0.6em 1.2em; white-space: nowrap; }
+		
+		#home #home-gallery .ui-btn {
+			background: none repeat scroll 0 0 #333333;
+			color: #FFFFFF;
+			display: inline-block;
+			padding-left: 1%;
+			text-align: left;
+			text-shadow: none;
+			width: 45%;
+			border:none;
+			padding-left:0px;
+		}
+		
+		#home #home-gallery .red-btn{ background-color:#F51F00 !important; }
+		
+		/*styling for promo tiles*/
+		#home .page-promo a.promo1 img{width:100%; height:100%;}
+		#home .page-promo a.promo2 img{width:100%;}
+		#home .page-promo a.promo1, 
+		#home .page-promo a.promo2, 
+		#home .page-promo a.promo3, 
+		#home .page-promo a.promo4
+		{
+			text-decoration:none;
+		}
+		
+		#home .page-promo a.promo1 .promo-90day
+		{
+			background-color: #7899B6;
+			height: auto;
+			margin-bottom: 5px;
+			padding-bottom: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 5px;
+			position: relative;
+			width: 100%;
+		}
+		
+		#home .page-promo a.promo1 .promo-90day h4
+		{
+			color:#fff;
+			text-align:center;
+			width:100%;
+			font-size:18px;
+			font-family:stratum;
+			line-height:18px;
+			text-transform:uppercase;
+			font-weight:normal;
+			margin-top:0px;
+			margin-bottom:0px;
+		}
+		
+		#home .page-promo a.promo1 .promo-90day h4 span
+		{
+			color:#d20f10;
+		}
+		
+		#home .page-promo a.promo1 .promo-90day p.act
+		{
+			color:#fff;
+			text-align:center;
+			width:100%;
+			font-size:12px;
+			font-family:stratum;
+			text-transform:uppercase;
+			font-style:italic;
+			font-weight:normal;
+			margin-top:0px;
+			margin-bottom:0px;
+		}
+		
+		#home .text-right
+		{
+			margin-left:57%;
+			width:50%;
+		}
+		
+		#home .text-right p.seedetails
+		{
+			color:#fff;
+			text-align:center;
+			width:100%;
+			font-size:9px;
+			font-family:stratum;
+			text-transform:uppercase;
+			margin-top:0px;
+			margin-bottom:0px;
+			font-weight:normal;
+		}
+		
+		#home .text-right p.seedetails span
+		{
+			background-image:url("/en/mobile/img/right-white-arrows.png");
+			background-repeat:no-repeat;
+			background-position:center;
+			height:13px;
+			width:13px;
+			margin-left:5px;
+			display:inline-block;
+		}
+		
+		
+		
+		#home .page-promo a.promo2 #imgDays, 
+		#home .page-promo a.promo2 #trade-in,
+		#home .page-promo a.promo2 #v8_bonus
+		{
+			position:relative;
+		}
+		
+		#home .page-promo a.promo3 .promo-military
+		{
+			background-color:#000;
+			width:100%;
+			padding-bottom:5px;
+			margin-bottom:5px;
+		}
+		.page-promo div img{ float:left;}
+		#home .page-promo a.promo3 .promo-military h4, 
+		#home .page-promo a.promo3 .promo-military h5
+		{
+			color:#d20f10;
+			text-align:center;
+			width:100%;
+			font-size:16px;
+			font-family:stratum;
+			line-height:16px;
+			text-transform:uppercase;
+			font-weight:normal;
+			margin-top:-33px;
+			margin-bottom:0px;
+		}
+		
+		#home .page-promo a.promo3 .promo-military h5
+		{
+			color:#fff;
+			text-align:left;
+			margin-top:0px;
+			padding-top:5px;
+			padding-left:10px;
+		}
+		
+		#home .page-promo a.promo3 .promo-military h4 span, 
+		#home .page-promo a.promo3 .promo-military h5 span
+		{
+			color:#fff;
+		}
+		
+		#home .page-promo a.promo3 .promo-military h5 span
+		{
+			color:#d20f10;
+		}
+	
+		#home .page-promo a.promo4 .promo-college
+		{
+			background-color:#000;
+			width:100%;
+			padding-bottom:5px;
+		}
+		
+		#home .page-promo a.promo4 .promo-college h4
+		{
+			color:#d20f10;
+			text-align:center;
+			width:100%;
+			font-size:18px;
+			font-family:stratum;
+			line-height:18px;
+			text-transform:uppercase;
+			font-weight:normal;
+			margin-top:-53px;
+			margin-bottom:0px;
+		}
+		
+		#home .page-promo a.promo4 .promo-college h4 span
+		{
+			color:#fff;
+		}
+		
+		#home .page-promo a.promo4 .promo-college .text-left
+		{
+			margin-left:0%;
+			width:50%;
+			padding-top:5px;
+			padding-left:10px;
+		}
+		
+		#home .page-promo a.promo4 .promo-college .text-left p.pays
+		{
+			color:#fff;
+			text-align:left;
+			width:100%;
+			font-size:9px;
+			font-family:stratum;
+			text-transform:uppercase;
+			margin-top:0px;
+			margin-bottom:0px;
+			font-weight:normal;
+			font-style:italic;
+		}
+		
+		#home .page-promo a.promo4 .promo-college .text-left h5
+		{
+			color:#fff;
+			text-align:left;
+			width:102px;
+			font-size:22px;
+			line-height:22px;
+			font-family:stratum;
+			text-transform:uppercase;
+			margin-top:0px;
+			margin-bottom:0px;
+			font-weight:normal;
+		}
+		
+		#home .page-promo a.promo4 .promo-college .text-left h5 span
+		{
+			color: #D20F10;
+			display: block;
+			font-family: stratum;
+			font-size: 9px;
+			font-weight: normal;
+			line-height: 12px;
+			margin-bottom: 0;
+			margin-top: 0px;
+			padding-left:0px;
+			text-align: left;
+			text-transform: uppercase;
+			vertical-align: top;
+		}
+		
+		#home #model_shown p{
+			color: #E9E9E8;
+			font-size: 12pt;
+			line-height:12pt;
+			font-family: Helvetica Regular;
+			margin-right: 5px;
+			float: right;
+			position: relative;
+			top: 186px;
+		}
+
+		.downloadCount{
+			z-index: 10000;
+			position:absolute;
+			bottom: 32%;
+			left: 31%;
+			text-align: center;
+			color: #ffffff;
+		}
+
+		.downloadCount span{
+			color: #ff7a7a;
+			font-size: 18px;
+		}
+	</style>
+</div>
+<div id="msgTxt"></div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc6910b18d58791b7f6b6fb7972e22aa1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

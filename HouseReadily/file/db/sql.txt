@@ -1,0 +1,81 @@
+select count(*) from (select userId from readily_operatelog where createTime < '2013-06-07' and createTime > '2013-05-31' group by (userId)) a;
+select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 1 group by (userId)) a;
+select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 2 group by (userId)) a;
+select count(*) from readily_housereadily where updateTime < '2013-06-07' and updateTime > '2013-06-06';
+select count(*) from readily_customer where updateTime < '2013-06-07' and updateTime > '2013-06-06';
+select count(*) from readily_housefollow where createTime < '2013-06-07' and createTime > '2013-06-06';
+
+
+
+
+select * from (select 
+(select count(*) from (select userId from readily_operatelog where createTime < '2013-06-07' and createTime > '2013-05-31' group by (userId)) a) as l1,
+(select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 1 group by (userId)) a) as l2,
+(select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 2 group by (userId)) a) as l3,
+(select count(*) from readily_housereadily where updateTime < '2013-06-07' and updateTime > '2013-06-06') as l4,
+(select count(*) from readily_customer where updateTime < '2013-06-07' and updateTime > '2013-06-06') as l5,
+(select count(*) from readily_housefollow where createTime < '2013-06-07' and createTime > '2013-06-06') as l6
+) b;
+
+union all
+
+select * from (select 
+(select count(*) from (select userId from readily_operatelog where createTime < '2013-06-07' and createTime > '2013-05-31' group by (userId)) a) as l1,
+(select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 1 group by (userId)) a) as l2,
+(select count(*) from (select userId from readily_systemlog where createTime < '2013-06-07' and createTime > '2013-06-06' and type = 2 group by (userId)) a) as l3,
+(select count(*) from readily_housereadily where updateTime < '2013-06-07' and updateTime > '2013-06-06') as l4,
+(select count(*) from readily_customer where updateTime < '2013-06-07' and updateTime > '2013-06-06') as l5,
+(select count(*) from readily_housefollow where createTime < '2013-06-07' and createTime > '2013-06-06') as l6
+) b;
+
+
+select * from (select 
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and taskId = 4) as loginTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and taskId = 5) as houseReadilyTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and taskId = 6) as customerTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and (taskId = 3 or taskId = 7) and shareType = 1) as shareSinaTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and (taskId = 3 or taskId = 7) and shareType = 2) as shareTencentTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and (taskId = 3 or taskId = 7) and shareType = 3) as shareWeiXinTask,
+(select sum(growing) from readily_tasklog where createTime > '2013-05-31' and createTime < '2013-06-07' and (taskId = 3 or taskId = 7) and shareType = 4) as shareQzoneTask
+) a;
+
+
+
+
+ALTER TABLE `readily_task` ADD COLUMN `isDisplay` int(11);
+update readily_task set isDisplay = 1 where isDisplay is null;
+INSERT INTO `readily_task` VALUES ('8', '赠送积分', '2013年6月15日之前注册用户赠送100积分', '2013年6月15日之前注册用户赠送100积分,该任务可以获得{0}次奖励,您已获得其中{1}次奖励', '100', '100', '1', '', '1', 0);
+
+
+
+users
+project
+--readily_broker
+readily_code
+readily_customer
+readily_feedback
+readily_houseattachment
+readily_housefollow
+readily_houseowner
+readily_housereadily
+readily_operatelog
+readily_systemlog
+readily_task
+readily_tasklog
+readily_userext
+house_area
+house_city
+
+
+
+加入索引：
+readily_housereadily:projectId,creater
+readily_houseattachment:houseReadilyId
+readily_houseowner:houseReadilyId,customerId
+readily_housefollow:houseReadilyId,customerId
+readily_customer:creater
+readily_systemlog:userId,creater
+readily_operatelog:userId,creater
+readily_code:userId
+readily_userext:userId
+readily_tasklog:userId,taskId,creater

@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>随手房 - 用户反馈中心</title>
+<meta name="keywords" content="随手房,随手房用户留言反馈" />
+<meta name="description" content="随手房移动产品是地产经纪人必备的手机应用助手，随时随地跟进房源、客源信息记录，维系客户绝不遗忘，帮助房地产经纪人快速查找所需，简洁至极！房产经纪人力荐的客户、房源手机管理录入存储应用。" />
+<script src="js/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.form.js" type="text/javascript"></script>
+<!--
+<script type="text/javascript" async="" src="ga.js"></script>
+<script type="text/javascript" src="gongneng.js"></script>
+-->
+<!--<link href="Untitled-3.css" type="text/css" rel="stylesheet" />-->
+<link rel="stylesheet" href="css/reset.css?2.0" />
+<link rel="stylesheet" href="css/common.css?2.0" />
+<!--
+<link rel="stylesheet" href="gongneng.css?2.0" />
+-->
+
+<script type="text/javascript">
+
+  function adisplay(){
+document.getElementById("and_lay").style.display="block"; 
+  }
+  function adisappear(){
+document.getElementById("and_lay").style.display="none"; 
+  }
+
+
+</script>
+
+
+<style>
+
+/*-------------------------------------------------------------------------banner代码---------------------------*/
+#banner,#banner_free {
+	width: auto;
+	height: 632px;
+	border-bottom: #3ba5e1 1px solid;
+}
+.banner_m {
+	width: 960px;
+	background: url(images/随手房改.jpg) left top no-repeat;
+	margin: 0 auto;
+	height: 632px;
+	
+	
+}
+#banner_free .banner_m{
+	background: url(../img/banner_free.png) left top no-repeat;
+}
+.banner_m p {
+	font-size: 15px;
+	color: #3b648a;
+	line-height: 19px;
+	margin-left: 41px;
+}
+.banner_m a:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+.buy {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	cursor: pointer;
+	display: block;
+	background: url(../img/buy.png) no-repeat left top;
+}
+.download {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	margin-right: 5px;
+	cursor: pointer;
+	display: inline-block;
+	text-indent:-999em;
+	background: url(../img/download.png) no-repeat left top;
+	vertical-align: text-bottom;
+}
+.download_p {
+	color: #fff;
+	position: relative;
+	left: 42px;
+	top: 20px;
+	text-decoration: none;
+}
+.download_p:hover {
+	text-decoration: underline;
+}
+.download:hover {
+	
+}
+/*-------------------------------------------------------------------------content代码---------------------------*/
+#content {
+	background: url(../img/m_bg.png) repeat-x left top;
+	width: auto;
+	height: 310px;
+	border-top: #FFF solid 1px;
+	border-bottom: #e6e6e6 dashed 1px;
+}
+.content_m {
+	width: 960px;
+	margin: 0 auto;
+	padding: 60px 0px 0px 50px;
+	;	}
+.content_mm {
+	float: left;
+	width: 265px;
+	display: inline;
+}
+.content_mm h2 {
+	border-left: #9acce8 solid 10px;
+	color: #068bb7;
+	font-size: 24px;
+	font-weight: normal;
+	padding-left: 8px;
+	margin: 0px;
+}
+.content_mm p {
+	color: #7f858a;
+	font-size: 15px;
+	line-height:25px;
+	margin-top: 5px;
+}
+.content_mm img {
+	margin-left: 5px;
+}
+.link {
+	margin-top: 54px;
+}
+.link_l {
+	font-size: 14px;
+	float: left;
+	display: inline;
+	color: #7f858a;
+}
+.link_l img {
+	margin: 2px 5px 1px 10px;
+	vertical-align: middle;
+	float: left;
+}
+.link_l a {
+	color: #7f858a;
+	float: left;
+}
+.link_l span {
+	float: left;
+	color: #068bb7;
+}
+.link_l a:hover {
+	color: #333;
+}
+.link_r a {
+	float: right;
+	color: #0f7ce2;
+	text-decoration: none;
+	font-size: 14px;
+	margin-right: 80px;
+	display: inline;
+}
+.link_r a:hover {
+	text-decoration: underline;
+	color: #25a0ff;
+}
+/*-------------------------------------------------------------------------footer代码---------------------------*/
+#copyright a {
+	color: #6d6d6d;
+	text-decoration: none;
+}
+#copyright {
+	width: 960px;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 10px;
+	color: #ccc;
+	font-size: 12px;
+}
+.footer {
+	height: 50x;
+	padding-top: 15px;
+}
+.menu{height:40px;background:url(images/menu_bg_1.gif) no-repeat -99px bottom;z-index:100;}
+.li_3{position:relative;z-index:100;}   
+.li_3_content{position:absolute;top:20px;left:0px;width:127px;line-height:40px;z-index:99;display:none;height:188px;*top:18px;}
+.li_3_content dt{height:17px;border-bottom:3px solid #417BAD;*height:19px;}
+.li_3_content dd{border-left:1px solid #E6E4E3;border-right:1px solid #E6E4E3;padding: 0 8px;background: #ffffff url(images/menu.gif) no-repeat bottom;}
+.li_3_content dd a{text-align:center;color:#666666;}
+.li_3_content a:hover{color:#f18336;}
+.iabox .layer{width:204px;background:#fafbfb;height:auto;border:1px solid #c1c1c1;overflow:hidden;z-index:999;position:absolute;border-radius:3px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;webkit-border-top-left-radius:0px;webkit-border-top-left-radius:0px;-webkit-box-shadow: #c1c1c1 0px 2px 2px;-moz-box-shadow: #c1c1c1 0px 2px 2px;box-shadow: #c1c1c1 0px 2px 2px;display:none}
+.iabox .layer li{height:45px;border-top:1px solid #c1c1c1;margin-top:-1px;}
+.iabox .layer li span{display:block;margin:10px 0 0 10px;padding-left:45px;background:url(images/common_icons.png) no-repeat;font-size:14px;height:31px;line-height:30px;overflow:hidden}
+.iabox .layer li span a{color:#4c4c4c}
+.iabox .layer li .wandou{background-position:7px bottom}
+.iabox .layer li .qh360{background-position:7px -31px}
+.iabox .layer li .ipho{background-position:7px top}
+.iabox .layer .erwei{padding:10px 0;height:auto;text-align:center}
+.iabox .layer li p{line-height:16px;color:#4c4c4c;font-size:14px;}
+.iabox .layer .erwei p{padding:0}
+.iabox .layer .erwei p a{font-size:20px;line-height:20px;font-family:"Microsoft Yahei ";color:#3063d0}
+
+/*******************************************table样式****************************************/
+.tb {
+	text-align:center;
+	width:100%;
+}
+.tb td {
+	padding: 10px 10px; 10px 10px;
+	
+}
+.tb .text {
+	width:300px;
+	border:0; 
+	font-size:20px; 
+	background:#dde0e7; 
+	height:40px;
+}
+
+</style>
+
+<script>
+$(function(){
+        $(".menu li").hover(
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current = $(".menu li").index($(".first"));
+                        $(".menu").css("background-position",(120*current+1)+"px"+" bottom");
+                        $(".current").removeClass("lihover");
+                        $(".menu li").removeClass("first");
+                        $(this).addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+if(num != 4){
+                        	$(".menu").stop().animate({backgroundPosition:(120*num+1)+"px"+" bottom"},120*len);
+}
+else
+{
+ $(".menu").stop().animate({backgroundPosition:(120*num+1+40)+"px"+" bottom"},120*len);
+}
+              //          if(num == 3){
+              //                  $(".li_3_content").show();
+              //          };
+        /*      },
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(86*current+1)+"px"+" bottom"},100*len); */
+                }
+        );
+        
+        $(".li_3").hover(
+                function()
+                {
+
+                        $(".li_3_content").fadeIn(0);
+                },
+                function()
+                {
+                        $(".li_3_content").fadeOut(500,function(){
+$(".li_3_content").css("display","none");
+});
+                }
+        );
+
+
+        $(".menu").mouseleave(function(){
+        				var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(120*current+1)+"px"+" bottom"},120*len);
+        });
+$(".noclick").click(function(event){
+event.preventDefault();
+});
+
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('input:text').each(function(){
+		var txt = $(this).val();
+		$(this).focus(function(){
+			if(txt === $(this).val()){
+				$(this).val("");
+				$(this).css("font-style", "normal");
+				$(this).css("color", "#000");
+			}
+		}).blur(function(){
+			if($(this).val() == ""){
+				$(this).val(txt);
+				resetTextStyle($(this));
+			}
+		});
+	})
+	
+	var desc = $("#description").val();
+	$("#description").focus(function(){
+		if(desc === $(this).val()){
+			$(this).text("");
+			$(this).css("font-style", "normal");
+			$(this).css("color", "#000");
+			$(this).css("font-weight", "bold");
+		}
+	}).blur(function(){
+		if($(this).val() == ""){
+			$(this).text(desc);
+			resetAreaStyle($(this));
+		}
+	});
+	
+	// 改变按钮样式
+	$("#btnSubmit").mouseover(function(){
+		$(this).attr("src", "images/send_hover.png");
+	});
+	$("#btnSubmit").mouseout(function(){
+		$(this).attr("src", "images/send.png");
+	});
+	$("#btnSubmit").mousedown(function(){
+		$(this).attr("src", "images/send_click.png");
+	});
+	$("#btnSubmit").mouseup(function(){
+		$(this).attr("src", "images/send.png");
+	});
+	
+	// 使用ajax提交form
+    var options = {
+        beforeSubmit:  showRequest,
+        success:       showResponse
+    }; 
+    $('#feedbackForm').ajaxForm(options); 
+});
+
+function resetTextStyle(text){
+	text.css("font-style", "italic");
+	text.css("color", "#838995");
+}
+
+function resetAreaStyle(area){
+	area.css("font-style", "italic");
+	area.css("color", "#838995");
+	area.css("font-weight", "normal");
+}
+
+/** 
+  * @see 清除字符串开始和结束位置空格
+  * @return 返回清除空格后的字符串
+  */
+String.prototype.trim = function() {
+	return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+function showRequest(formData, jqForm, options) {
+	if($("#userName").val().trim() == "" || $("#userName").val().trim() == "您的大名"){
+		alert("请输入您的大名");
+		$("#userName").focus();
+		return false;
+	}
+	if($("#email").val().trim() == "" || $("#email").val().trim() == "联系邮箱"){
+		alert("请输入联系邮箱");
+		$("#email").focus();
+		return false;
+	}
+	if(!$("#email").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
+    	alert("联系邮箱格式不正确，请重新输入！");
+		$("#email").focus();
+		return false;
+	}
+	if($("#description").val().trim() == "" || $("#description").val().trim() == "您的意见"){
+		alert("请输入您的意见");
+		$("#description").focus();
+		return false;
+	}
+	
+	// jquery手动提交form
+	/*
+	$("#feedbackForm").ajaxSubmit(function(msg){
+		if(msg != null && msg.housereadily != ""){
+			var result = eval("("+msg.housereadily+")");
+			if(result.status == 1){
+				alert("提交成功，非常感谢您的宝贵建议！");
+				// 表单还原
+				$("#userName").val("您的大名");
+				$("#email").val("联系邮箱");
+				$('input:text').each(function(){
+					resetTextStyle($(this));
+				})
+				$("#description").val("您的意见");
+				resetAreaStyle($("#description"));
+			}else{
+				alert("提交失败，请重新填写您的宝贵建议！");
+			}
+			alert(result);
+		}
+	});*/
+	return true;
+}
+
+function showResponse(responseText, statusText){
+	var msg = responseText;
+	if(msg != null && msg != "" && msg.housereadily != ""){
+		var result = eval("("+msg.housereadily+")");
+		if(result.status == 1){
+			alert("提交成功，非常感谢您的宝贵建议！");
+			// 表单还原
+			$("#userName").val("您的大名");
+			$("#email").val("联系邮箱");
+			$('input:text').each(function(){
+				resetTextStyle($(this));
+			})
+			$("#description").val("您的意见");
+			resetAreaStyle($("#description"));
+		}else{
+			alert("提交失败，请重新填写您的宝贵建议！");
+		}
+	}else{
+		alert("提交成功，非常感谢您的宝贵建议！");
+		// 表单还原
+		$("#userName").val("您的大名");
+		$("#email").val("联系邮箱");
+		$('input:text').each(function(){
+			resetTextStyle($(this));
+		})
+		$("#description").val("您的意见");
+		resetAreaStyle($("#description"));
+	}
+}
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+<div class="header">
+<!--    <ul class="menu">
+      <li ><a href="/" target="_self">首页</a></li>
+      <li class="licurrent"><a href="features.php" target="_self">功能</a></li>
+      <li ><a href="getrom.php" target="_self">下载</a></li>
+      <li><a href="http://zhuti.xiaomi.com/" target="_blank">主题</a></li>
+      <li><a class="licurrent" href="http://app.xiaomi.com/" target="_blank">应用</a></li>
+      <li><a  class="noborder " href="index.php" target="_self">论坛</a></li>
+    </ul>-->
+
+
+
+<ul class="menu" style="background-position: 245px 100%; padding-top:10px;  ">
+        <li  class="" ><a href="index.html" target="_self">首页</a></li>
+      <li class=""><a href="function.html" target="_self">功能介绍</a></li>
+      <li class="first current"><a href="feedback.html" target="_self">用户反馈</a></li>
+      <li class=""><a href="about.html" target="_self">关于我们</a></li>
+
+    </ul>
+
+
+
+
+
+    <a href="http://www.suishoufang.com/index.html"> <img title="随手房" class="miui_logo" src="images/logo.png"></a>
+  </div>
+ <div style="margin-top:0px; width:100%;height:1px;background-color:#068BBB;overflow:hidden;"></div>
+  <div style=" margin-left: auto;
+margin-right: auto;width:700px; height:550px; padding-top:0px">
+<form id="feedbackForm" action="http://readily.zushou365.com/rest/feedback/0?action=add" method="post" style="margin-top:10px;">
+<table border="0" align="center" class="tb">
+	<tr>
+    	<td colspan="2"><img src="images/advise.png" /></td>
+    </tr>
+    <tr>
+    	<td align="right"><input type="text" id="userName" name="userName" value="您的大名" class="text" style="margin-right:10px; font-style:italic; color:#838995;" /></td>
+        <td align="left"><input type="text" id="email" name="email" value="联系邮箱" class="text" style="margin-left:10px; font-style:italic; color:#838995;" /></td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+        	<textarea id="description" name="description" cols="50" rows="10" style="width:642px; border:0; font-size:20px; background:#dde0e7; font-weight:normal; font-style:italic; color:#838995;">您的意见</textarea>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2"><input id="btnSubmit" type="image" src="images/send.png" /></td>
+    </tr>
+</table>
+</form>
+<!--
+  <img  src="images/our_team.png"/>  <br />
+  这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。
+  
+  <br />
+  这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。这里是一堆很有意思的文字。
+    <br />
+      <br />
+        <br />
+          <br />
+            <br />
+            
+   <img  src="images/联系我们.png"/>  <br />
+  <br /> <br />
+   <img  src="images/icons_phone.png"/> 18665850668 <br />
+    <img  src="images/icons_email.png"/>  ming1938@gmail.com<br />
+     <img  src="images/icons_adrress.png"/>  天朝-深圳<br />
+  -->
+  </div>
+   
+ 
+ 
+  <div class="footer"> 
+       <div id="copyright" style="padding-bottom:20px">
+        <p id="copyRightEn"><font color="#666666">Copyright © 2013 suishoufang.com. All Rights Reserved.</font></p>
+        </div>
+	</div>
+ 
+  <!-- end .container --></div>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc6910b18d58791b7f6b6fb7972e22aa1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

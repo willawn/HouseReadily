@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+  - Mapping file for the Hibernate implementation of the Clinic interface.
+ -->
+<hibernate-mapping auto-import="true" default-lazy="false">  
+
+  
+<class name="com.huzhiyi.housereadily.model.CUser" table="users">
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="name"  type="string" 	column="name"/> 
+   <property name="passwd"  type="string" 	column="passwd"/>
+   <property name="realname"  type="string" 	column="realname"/>
+   <property name="email"  type="string" 	column="email"/>
+   <property name="descn"  type="string" 	column="descn"/>
+   <property name="status"  type="integer" 	column="status"/>
+   <property name="regDate"  type="timestamp"    column="regDate"    />  
+   
+   <property name="mobile"  type="string" 	column="mobile"/>
+   <property name="tel"  type="string" 	column="tel"/>
+   <property name="address"  type="string" 	column="address"/>
+   
+   <property name="companyName"  type="string" 	column="companyName"/>
+   <property name="companyShortName"  type="string" 	column="companyShortName"/>
+   <property name="bigAreaCode"  type="integer" 	column="bigAreaCode"/>
+   <property name="smallAreaCode"  type="integer" 	column="smallAreaCode"/>
+   <property name="cityCode"  type="integer" 	column="cityCode"/>
+   
+   <property name="sex"  type="integer" 	column="sex"/>
+   <property name="phoneZone"  type="string" 	column="phoneZone"/>
+   <property name="qq"  type="string" 	column="qq"/>
+   <property name="msn"  type="string" 	column="msn"/>
+   <property name="pid"  type="string" 	column="pid"/>
+   
+   <property name="companyUrl"  type="string" 	column="companyUrl"/>
+   <property name="workYear"  type="integer" 	column="workYear"/>
+   <property name="workDate"  type="timestamp" 	column="workDate"/>
+   <property name="postCode"  type="string" 	column="postCode"/>
+   <property name="project"  type="string" 	column="project"/>
+   <property name="agentPass"  type="string" 	column="agentPass"/>
+   <property name="faxZone"  type="string" 	column="faxZone"/>
+   <property name="fax"  type="string" 	column="fax"/>
+   
+   <property name="foundDate"  type="timestamp" 	column="foundDate"/>
+   <property name="birthDate"  type="timestamp" 	column="birthDate"/>
+   <property name="jobTitle"  type="string" 	column="jobTitle"/>
+   <property name="department"  type="string" 	column="department"/>
+   <property name="vipStartTime"  type="timestamp" 	column="vipStartTime"/>
+   <property name="vipExpireTime"  type="timestamp" 	column="vipExpireTime"/>
+   <property name="lastLoginTime"  type="timestamp" 	column="lastLoginTime"/>
+   <property name="lastPublishTime"  type="timestamp" 	column="lastPublishTime"/>
+   <property name="totalLoginCount"  type="integer" 	column="totalLoginCount"/>
+   <property name="dayLoginCount"  type="integer" 	column="dayLoginCount"/>
+   <property name="dayJifen"  type="integer" 	column="dayJifen"/>
+   <property name="totalJifen"  type="integer" 	column="totalJifen"/>
+   <property name="money"  type="double" 	column="money"/>
+   <property name="credit"  type="integer" 	column="credit"/>
+   
+   <property name="answer"  type="string" 	column="answer"/>
+   <property name="question"  type="string" 	column="question"/>
+   <property name="realFirstName"  type="string" 	column="realFirstName"/>
+   <property name="realLastName"  type="string" 	column="realLastName"/>
+   
+   
+   <property name="licenseNo"  type="string" 	column="licenseNo"/>
+   <property name="certificateNo"  type="string" 	column="certificateNo"/>
+   <property name="registrationNo"  type="string" 	column="registrationNo"/>
+   <property name="school"  type="string" 	column="school"/>
+   
+   <property name="birthProvinceCode"  type="integer" 	column="birthProvinceCode"/>
+   <property name="birthCityCode"  type="integer" 	column="birthCityCode"/>
+   <property name="birthAreaCode"  type="integer" 	column="birthAreaCode"/>
+   
+   <property name="recommend" type="string" column="recommend"/>
+   <property name="topRecommend" type="string" column="topRecommend"/>
+   
+   <property name="wsProcessOk"  type="integer" 	column="wsProcessOk"/>
+   <property name="wsProcessCur"  type="integer" 	column="wsProcessCur"/>
+   <property name="wsProcessIndex"  type="integer" 	column="wsProcessIndex"/>
+   
+   <property name="groupId"  type="integer" 	column="groupId"/>
+   
+   <property name="companyDescn" type="string" column="companyDescn"/>
+   <property name="companyAddress" type="string" column="companyAddress"/>
+   
+   
+   <property name="tjJifen"  type="integer" 	column="tjJifen"/>
+   <property name="tjLevel"  type="integer" 	column="tjLevel"/>
+   <property name="tjPublishCount"  type="integer" 	column="tjPublishCount"/>
+   <property name="recommendType" type="integer" column="recommendType"/>
+   <property name="vipType" type="integer" column="vipType"/>
+
+   <property name="cid"  type="integer" column="cid"/>
+   <property name="extendStr"  type="string" column="extendStr"/>
+   
+   <property name="lastMsgTime"  type="timestamp" 	column="lastMsgTime"/>
+   
+   <property name="smsCount"  type="integer" 	column="smsCount"/>
+   <property name="userType"  type="integer" 	column="userType"/>
+   <property name="smsPwd"  type="string" 	column="smsPwd"/>
+   
+   <property name="paymentId"  type="integer" 	column="paymentId"/>
+   <property name="paymentExpireTime"  type="timestamp" 	column="paymentExpireTime"/>
+   <property name="internetServer"  type="integer" column="internetServer"/>
+   <property name="trialSpTime"  type="timestamp" 	column="trialSpTime"/>
+   <property name="trialSpDays"  type="integer" 	column="trialSpDays"/>
+   <property name="usersZone"  type="string" 	column="usersZone"/>
+   <property name="active"  type="integer" 	column="active"/>
+   <property name="regSource"  type="integer" 	column="regSource"/>
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CUserSystemSetting" table="users_systemsettings" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="userId"  type="integer" 	column="userId"/> 
+   <property name="runMode"  type="integer" 	column="runmode"/>
+   <property name="maxThread"  type="integer" 	column="maxthread"/>
+   <property name="timeOut"  type="integer" 	column="timeout"/>
+   
+   
+   <property name="hightPriority"  type="integer" 	column="hightpriority"/>
+   <property name="needReadReceipt"  type="integer" 	column="needreadreceipt"/>
+   <property name="mailDomain"  type="string" 	column="maildomain"/>
+   <property name="mailServer"  type="string" 	column="mailserver"/>
+   <property name="mailPort"  type="integer" 	column="mailport"/>
+   
+   <property name="mailNeedSSL"  type="integer" 	column="mailneedssl"/>
+   <property name="mailAddress"  type="string" 	column="mailaddress"/>
+   <property name="mailUserName"  type="string" 	column="mailusername"/>
+   <property name="mailPassword"  type="string" 	column="mailpassword"/>
+   <property name="mailIsChecked"  type="integer" 	column="mailischecked"/>
+   
+   <property name="proxy"  type="integer" 	column="proxy"/>
+   <property name="proxyAddress"  type="string" 	column="proxyaddress"/>
+   <property name="proxyPort"  type="integer" 	column="proxyport"/>
+   <property name="proxyUserName"  type="string" 	column="proxyusername"/>
+   <property name="proxyPassword"  type="string" 	column="proxypassword"/>
+   
+   <property name="notShowVerifyCode"  type="integer" 	column="NotShowVerifyCode"/>
+   <property name="recoginzeTimeout"  type="integer" 	column="RecoginzeTimeout"/>
+   <property name="notShowRecognized"  type="integer" 	column="NotShowRecognized"/>
+   <property name="regName"  type="string" 	column="RegName"/>
+   <property name="regPwd"  type="string" 	column="RegPwd"/>
+   <property name="regEmail"  type="string" 	column="RegEmail"/>
+   <property name="regMobile"  type="string" 	column="RegMobile"/>
+   <property name="regTel"  type="string" 	column="regTel"/>
+   <property name="arrowRenewAccount"  type="integer" 	column="ArrowRenewAccount"/>
+   <property name="arrowCheckAccount"  type="integer" 	column="ArrowCheckAccount"/>
+   <property name="arrowRndAccount"  type="integer" 	column="ArrowRndAccount"/>
+   <property name="arrowRndEmail"  type="integer" 	column="ArrowRndEmail"/>
+   <property name="arrowRndMobile"  type="integer" 	column="ArrowRndMobile"/>
+   <property name="arrowRndTel"  type="integer" 	column="arrowRndTel"/>
+   <property name="arrowAutoDelete"  type="integer" 	column="arrowAuotoDelete"/>
+   <property name="serverType"  type="integer" 	column="ServerType"/>
+   
+ </class>
+ 
+ 
+ 
+ 
+ <class name="com.huzhiyi.housereadily.model.CHouseSell" table="house" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="commName"  type="string" 	column="CommName"/> 
+   <property name="userDefine"  type="string" 	column="UserDefine"/>
+   <property name="areaNum"  type="string" 	column="AreaNum"/>
+   
+   <property name="roomNum"  type="integer" 	column="RoomNum"/>
+   <property name="hallNum"  type="integer" 	column="HallNum"/> 
+   <property name="toiletNum"  type="integer" 	column="ToiletNum"/>
+   <property name="proFloor"  type="integer" 	column="ProFloor"/>
+   <property name="floorNum"  type="integer" 	column="FloorNum"/>
+   <property name="houseAge"  type="integer" 	column="HouseAge"/>
+   <property name="fitmentType"  type="integer" 	column="FitmentType"/>
+   <property name="buildType"  type="integer" 	column="BuildType"/>
+   <property name="houseOri"  type="integer" 	column="HouseOri"/>
+   <property name="proName"  type="string" 	column="ProName"/>
+   <property name="detail"  type="string" 	column="Detail"/>
+   <property name="detailText"  type="string" 	column="DetailText"/>
+   <property name="detailKeyword"  type="string" 	column="DetailKeyword"/>
+   <property name="cityCode"  type="integer" 	column="CityCode"/>
+   <property name="communityCode"  type="string" 	column="CommunityCode"/>
+   <property name="bigAreaCode"  type="integer" 	column="BigAreaCode"/>
+   <property name="smallAreaCode"  type="integer" 	column="SmallAreaCode"/>
+   <property name="address"  type="string" 	column="Address"/>
+   <property name="trafficInfo"  type="string" 	column="TrafficInfo"/>
+   <property name="aroundCondition"  type="string" 	column="AroundCondition"/>
+   <property name="liveAreaNum"  type="string" 	column="LiveAreaNum"/>
+   <property name="kitchenNum"  type="integer" 	column="KitchenNum"/>
+   <property name="balconyNum"  type="integer" 	column="BalconyNum"/>
+   <property name="floorType"  type="integer" 	column="FloorType"/>
+   <property name="houseRight"  type="integer" 	column="HouseRight"/>
+   <property name="expireDays"  type="integer" 	column="ExpireDays"/>
+   <property name="lookTime"  type="integer" 	column="LookTime"/>
+   
+   <property name="structure"  type="integer" 	column="Structure"/>
+   <property name="floorCells"  type="integer" 	column="FloorCells"/>
+   <property name="manageFee"  type="float" 	column="ManageFee"/>
+   <property name="hasElevator"  type="integer" 	column="HasElevator"/>
+   <property name="hasInnerFloor"  type="integer" 	column="HasInnerFloor"/>
+   
+   <property name="coverImage"  type="string" 	column="CoverImage"/>
+   <property name="uploadcommodelfile"  type="string" 	column="uploadcommodelfile"/>
+   <property name="uploadpropertypicfile"  type="string" 	column="uploadpropertypicfile"/>
+   <property name="uploadcommpicfile"  type="string" 	column="uploadcommpicfile"/>
+    
+   <property name="priceTexed"  type="float" 	column="PriceTexed"/>
+   <property name="payType"  type="integer" 	column="PayType"/>
+   <property name="housePrice"  type="float" 	column="HousePrice"/>
+   <property name="isRent"  type="integer" 	column="IsRent"/>
+   
+   <property name="deposit"  type="integer" 	column="Deposit"/>
+   <property name="isDolmus"  type="integer" 	column="isDolmus"/>
+   <property name="rentPrice"  type="double" 	column="rentPrice"/>
+   <property name="paymentTerm"  type="integer" 	column="PaymentTerm"/>
+   <property name="minMonth"  type="integer" 	column="minMonth"/>
+   <property name="liveDate"  type="timestamp" 	column="liveDate"/>
+   
+   <property name="landRemark"  type="string" 	column="landRemark"/>
+   
+   <property name="lon"  type="float" 	column="lon"/>
+   <property name="lat"  type="float" 	column="lat"/>
+   <property name="utype"  type="integer" 	column="utype"/>
+   
+   <property name="stype"  type="integer" 	column="stype"/>
+   <property name="insertTime"  type="timestamp"    	column="InsertTime"   />  
+   <property name="updateTime"  type="timestamp"    	column="UpdateTime"    /> 
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="userName"  type="string" 	column="userName"/> 
+  
+   <property name="targetNo"  type="string" 	column="targetNo"/> 
+   
+   <property name="publish"  type="integer" 	column="publish"/> 
+   <property name="buildDate" type="integer" column="buildDate"/>
+   
+   <property name="infoCode" type="string" column="infoCode"/>
+   
+   <property name="uploadcommodelfiletitle"  type="string" 	column="uploadcommodelfiletitle"/>
+   <property name="uploadpropertypicfiletitle"  type="string" 	column="uploadpropertypicfiletitle"/>
+   <property name="uploadcommpicfiletitle"  type="string" 	column="uploadcommpicfiletitle"/>
+   
+   <property name="uploadcommodelfiletext"  type="string" 	column="uploadcommodelfiletext"/>
+   <property name="uploadpropertypicfiletext"  type="string" 	column="uploadpropertypicfiletext"/>
+   <property name="uploadcommpicfiletext"  type="string" 	column="uploadcommpicfiletext"/>
+   
+   <property name="publishTime"  type="timestamp"    	column="publishTime"    /> 
+   <property name="publishFirstTime"  type="timestamp"    	column="publishFirstTime"    /> 
+   <property name="publishRefreshCount"  type="integer"    	column="publishRefreshCount"    /> 
+   <property name="deleted"  type="integer"    	column="deleted"/> 
+   
+   <property name="deletedTime"  type="timestamp"    	column="deletedTime"/> 
+   <property name="recommend"  type="integer"    	column="recommend"/> 
+   <property name="equitment"  type="string"    	column="equitment"/> 
+   
+   <property name="villaType"  type="integer" 	column="villaType"/> 
+	<property name="hallStructure"  type="integer" 	column="hallStructure"/> 
+	<property name="workshopType"  type="integer" 	column="workshopType"/> 
+	<property name="areaOfWorkshop"  type="float" 	column="areaOfWorkshop"/> 
+	<property name="areaOfSpace"  type="float" 	column="areaOfSpace"/> 
+	<property name="countOfGarage"  type="integer" 	column="countOfGarage"/> 
+	<property name="countOfPacking"  type="integer" 	column="countOfPacking"/> 
+	<property name="officeType"  type="integer" 	column="officeType"/> 
+	<property name="officeLeve"  type="integer" 	column="officeLeve"/> 
+	<property name="splitable"  type="integer" 	column="splitable"/> 
+	<property name="companyReg"  type="integer" 	column="companyReg"/> 
+	<property name="shopsType"  type="integer" 	column="shopsType"/> 
+	<property name="shopType"  type="integer" 	column="shopType"/> 
+	<property name="shopsed"  type="string" 	column="shopsed"/> 
+	<property name="shopsWil"  type="string" 	column="shopsWil"/> 
+    <property name="countSucceedSize"  type="integer" 	column="countSucceedSize"/> 
+    <property name="houseVersion"  type="integer" 	column="HouseVersion"/>
+    <property name="isSlabShow"  type="integer" 	column="isSlabShow"/>  
+    <property name="isSlabDelete"  type="integer" 	column="isSlabDelete"/>
+    <property name="imageServer"  type="integer" 	column="imageServer"/>
+ </class>
+ 
+ 
+ <class name="com.huzhiyi.housereadily.model.CArea" table="house_area" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="name"  type="string" 	column="AreaName"/> 
+   <property name="parentId"  type="integer" 	column="ParentId"/>
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CCity" table="house_city" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="cityCode"  type="integer" 	column="CityCode"/>
+   <property name="cityName"  type="string" 	column="CityName"/> 
+   <property name="cityEnName"  type="string" 	column="CityEnName"/> 
+   <property name="provinceId"  type="integer" 	column="provinceId"/>
+   <property name="orderId"  type="integer" 	column="OrderId"/>
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CProvince" table="house_province" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="provinceCode"  type="integer" 	column="provinceCode"/>
+   <property name="provinceName"  type="string" 	column="provinceName"/> 
+   <property name="provinceEnName"  type="string" 	column="provinceEnName"/> 
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CHouseCfg" table="house_cfg" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>  
+   <property name="cid"  type="integer" 	column="CId"/> 
+   <property name="name"  type="string" 	column="name"/>
+   <property name="ctype"  type="integer" 	column="CType"/> 
+   <property name="range"  type="string" 	column="range"/> 
+   <!-- <property name="citycode" type="integer" column="CityCode"/> -->
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CUserCredit" table="users_credit" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="userId"  type="integer" 	column="userId"/> 
+   
+   
+   <property name="pidImage"  type="string" column="pidImage"/> 
+   <property name="pidSubmitTime"  type="timestamp" column="pidSubmitTime"/> 
+   <property name="pidCheckTime"  type="timestamp" column="pidCheckTime"/>
+   <property name="pidStatus"  type="integer" column="pidStatus"/>
+   <property name="pidRemark"  type="string" column="pidRemark"/>
+   
+   <property name="ncardImage"  type="string" column="ncardImage"/> 
+   <property name="ncardSubmitTime"  type="timestamp" column="ncardSubmitTime"/> 
+   <property name="ncardCheckTime"  type="timestamp" column="ncardCheckTime"/>
+   <property name="ncardStatus"  type="integer" column="ncardStatus"/>
+   <property name="ncardRemark"  type="string" column="ncardRemark"/>
+   
+   <property name="personImage"  type="string" column="personImage"/> 
+   <property name="personSubmitTime"  type="timestamp" column="personSubmitTime"/> 
+   <property name="personCheckTime"  type="timestamp" column="personCheckTime"/>
+   <property name="personStatus"  type="integer" column="personStatus"/>
+   <property name="personRemark"  type="string" column="personRemark"/>
+   
+   <property name="agentImage"  type="string" column="agentImage"/> 
+   <property name="agentSubmitTime"  type="timestamp" column="agentSubmitTime"/> 
+   <property name="agentCheckTime"  type="timestamp" column="agentCheckTime"/>
+   <property name="agentStatus"  type="integer" column="agentStatus"/>
+   <property name="agentRemark"  type="string" column="agentRemark"/>
+   
+   <property name="companyLogoImage"  type="string" column="companyLogoImage"/> 
+   <property name="companyLogoSubmitTime"  type="timestamp" column="companyLogoSubmitTime"/> 
+   <property name="companyLogoCheckTime"  type="timestamp" column="companyLogoCheckTime"/>
+   <property name="companyLogoStatus"  type="integer" column="companyLogoStatus"/>
+   <property name="companyLogoRemark"  type="string" column="companyLogoRemark"/>
+   
+   <property name="companyLicenseImage"  type="string" column="companyLicenseImage"/> 
+   <property name="companyLicenseSubmitTime"  type="timestamp" column="companyLicenseSubmitTime"/> 
+   <property name="companyLicenseCheckTime"  type="timestamp" column="companyLicenseCheckTime"/>
+   <property name="companyLicenseStatus"  type="integer" column="companyLicenseStatus"/>
+   <property name="companyLicenseRemark"  type="string" column="companyLicenseRemark"/>
+   
+   <property name="companyCertificateImage"  type="string" column="companyCertificateImage"/> 
+   <property name="companyCertificateSubmitTime"  type="timestamp" column="companyCertificateSubmitTime"/> 
+   <property name="companyCertificateCheckTime"  type="timestamp" column="companyCertificateCheckTime"/>
+   <property name="companyCertificateStatus"  type="integer" column="companyCertificateStatus"/>
+   <property name="companyCertificateRemark"  type="string" column="companyCertificateRemark"/>
+   
+   <property name="companyRegistrationImage"  type="string" column="companyRegistrationImage"/> 
+   <property name="companyRegistrationSubmitTime"  type="timestamp" column="companyRegistrationSubmitTime"/> 
+   <property name="companyRegistrationCheckTime"  type="timestamp" column="companyRegistrationCheckTime"/>
+   <property name="companyRegistrationStatus"  type="integer" column="companyRegistrationStatus"/>
+   <property name="companyRegistrationRemark"  type="string" column="companyRegistrationRemark"/>
+   
+   <property name="pidBackImage"  type="string" column="pidBackImage"/> 
+   <property name="pidBackSubmitTime"  type="timestamp" column="pidBackSubmitTime"/> 
+   <property name="pidBackCheckTime"  type="timestamp" column="pidBackCheckTime"/>
+   <property name="pidBackStatus"  type="integer" column="pidBackStatus"/>
+   <property name="pidBackRemark"  type="string" column="pidBackRemark"/>
+   <property name="imageServer"  type="integer" column="imageServer"/>
+ </class>
+ 
+ 	<class name="com.huzhiyi.housereadily.model.CProject" table="Project" >
+   <id name="id" column="SeqId">
+	   <generator class="identity"/>
+   </id>      
+	<property name="robotId"  type="integer" 	column="robotId"/> 
+	<property name="robotRunId"  type="integer" 	column="robotRunId"/> 
+	<property name="refindKey"  type="string" 	column="refindKey"/> 
+	<property name="firstExtractionDate"  type="timestamp" 	column="firstExtractionDate"/> 
+	<property name="latestExtractionDate"  type="timestamp" 	column="latestExtractionDate"/> 
+	<property name="extractedInLatestRun"  type="string" 	column="extractedInLatestRun"/> 
+	<property name="city"  type="string" 	column="city"/> 
+	<property name="projectId"  type="string" 	column="id"/> 
+	<property name="name"  type="string" 	column="name"/> 
+	<property name="area"  type="string" 	column="area"/> 
+	<property name="subArea"  type="string" 	column="subArea"/> 
+	<property name="areaId"  type="integer" 	column="areaId"/> 
+	<property name="subAreaId"  type="integer" 	column="subAreaId"/> 
+	<property name="nameFullEn"  type="string" 	column="nameFullEn"/> 
+	<property name="nameSimpleEn"  type="string" 	column="nameSimpleEn"/> 
+	<property name="address"  type="string" 	column="address"/> 
+	<property name="price"  type="float" 	column="price"/> 
+	<property name="manageFee"  type="float" 	column="manageFee"/> 
+	<property name="description"  type="string" 	column="description"/> 
+	<property name="arround"  type="string" 	column="arround"/> 
+	<property name="traffic"  type="string" 	column="traffic"/> 
+	<property name="lat"  type="float" 	column="lat"/> 
+	<property name="lng"  type="float" 	column="lng"/> 
+	<property name="page"  type="integer" 	column="page"/> 
+	<property name="buildType"  type="integer"    	column="buildType"   />
+	
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CHouseWebsitesView" table="house_websites_view" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="serialNo"  type="integer" 	column="serialNo"/>
+   <property name="cityCode"  type="integer" 	column="CityCode"/> 
+   <property name="rank"  type="integer" 	column="rank"/>
+   <property name="cityStatus"  type="integer" 	column="CityStatus"/> 
+   <property name="esfUrl"  type="string" 	column="esfUrl"/> 
+   <property name="bsUrl"  type="string" 	column="bsUrl"/> 
+   <property name="spUrl"  type="string" 	column="spUrl"/> 
+   <property name="xzlUrl"  type="string" 	column="xzlUrl"/> 
+   <property name="cfckUrl"  type="string" 	column="cfckUrl"/> 
+   <property name="wid"  type="integer" 	column="wid"/>
+   <property name="siteName"  type="string" 	column="SiteName"/>
+   <property name="siteUrl"  type="string" 	column="SiteUrl"/>
+   <property name="remark"  type="string" 	column="Remark"/> 
+   <property name="groupId"  type="integer" 	column="GroupId"/>
+   <property name="allowReg"  type="integer" 	column="AllowReg"/> 
+   <property name="allowLogin"  type="integer" 	column="AllowLogin"/>
+   <property name="allowSell"  type="integer" 	column="AllowSell"/>
+   <property name="allowImport"  type="integer" 	column="allowImport"/>
+   <property name="allowModifyPwd"  type="integer" 	column="AllowModifyPwd"/>
+   <property name="allowModifyUser"  type="integer" 	column="AllowModifyUser"/>
+   <property name="allowRefresh"  type="integer" 	column="allowRefresh"/>
+   <property name="allowTimerRefresh"  type="integer" 	column="allowTimerRefresh"/>
+   <property name="allowTj"  type="integer" 	column="allowTj"/>
+   <property name="allowTimerTj"  type="integer" 	column="allowTimerTj"/>
+   <property name="allowTop"  type="integer" 	column="allowTop"/>
+   <property name="allowUpdate"  type="integer" 	column="allowUpdate"/>
+   <property name="allowDelete"  type="integer" 	column="allowDelete"/>
+   <property name="siteLoginType"  type="integer" 	column="SiteLoginType"/>
+   <property name="siteImageType"  type="integer" 	column="SiteImageType"/>
+   <property name="siteValidCodeType"  type="integer" 	column="SiteValidCodeType"/>
+   <property name="sitePublishType"  type="integer" 	column="sitePublishType"/>
+   <property name="siteLogo"  type="string" 	column="siteLogo"/>
+   <property name="status"  type="integer" 	column="status"/>
+   <property name="siteKc"  type="integer" 	column="SiteKc"/>
+   <property name="SiteChangeCity"  type="integer" 	column="SiteChangeCity"/>
+   <property name="paramUserType"  type="integer" 	column="ParamUserType"/>
+   <property name="paramSubjectType"  type="integer" 	column="ParamSubjectType"/>
+   <property name="nameFullEn"  type="string" 	column="NameFullEn"/>
+   <property name="nameSimpleEn"  type="string" 	column="nameSimpleEn"/>
+   <property name="visible"  type="integer" 	column="visible"/>
+   <property name="siteRemark"  type="string" 	column="siteRemark"/>
+   <property name="citySiteRemark"  type="string" 	column="citySiteRemark"/> 
+   <property name="allowResidence"  type="integer" 	column="allowResidence"/> 
+   <property name="allowVilla"  type="integer" 	column="allowVilla"/> 
+   <property name="allowShop"  type="integer" 	column="allowShop"/> 
+   <property name="allowOffice"  type="integer" 	column="allowOffice"/>
+   <property name="allowServer"  type="integer" 	column="AllowServer"/>  
+ </class>
+   <class name="com.huzhiyi.housereadily.model.CUsersWebSites" table="users_websites" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="userId"  type="int" 	column="userId"/> 
+   <property name="userName"  type="string" column="userName"/>
+   <property name="status"  type="int" 	column="status"/>
+   <property name="webSitesNo"  type="int" 	column="webSitesNo"/>
+   <property name="isBanStatus"  type="int" 	column="isBanStatus"/>
+   <property name="isBanTime"  type="timestamp" 	column="isBanTime"/> 
+   <property name="insertTime"  type="timestamp" 	column="insertTime"/> 
+   <property name="updateTime"  type="timestamp" 	column="updateTime"/> 
+ </class>
+ 
+ <!-- 客户表 -->
+ <class name="com.huzhiyi.housereadily.model.CCustomers" table="customers" >
+  <id name="id" column="id">
+	   <generator class="identity"/>
+   </id> 
+   <property name="realname"  type="string" 	column="realname"/> 
+	<property name="sex"  type="integer" 	column="sex"/> 
+	<property name="job"  type="string" 	column="job"/> 
+	<property name="mobile"  type="string" 	column="mobile"/> 
+	<property name="email"  type="string" 	column="email"/> 
+	<property name="tel"  type="string" 	column="tel"/> 
+	<property name="pid"  type="string" 	column="pid"/> 
+	<property name="address"  type="string" 	column="address"/> 
+	<property name="remark"  type="string" 	column="remark"/> 
+	<property name="deleted"  type="integer" 	column="deleted"/> 
+	<property name="deleteTime"  type="timestamp" 	column="deleteTime"/> 
+	<property name="insertTime"  type="timestamp" 	column="insertTime"/> 
+	<property name="updateTime"  type="timestamp" 	column="updateTime"/> 
+	<property name="userId"  type="integer" 	column="userId"/> 
+	<property name="userName"  type="string" 	column="userName"/> 
+	<property name="classId"  type="integer" 	column="classId"/> 
+	<property name="ctype"  type="integer" 	column="ctype"/>
+	<property name="btype"  type="integer" 	column="btype"/>
+	
+	<property name="mtotalPrice"  type="float"   column="mtotalPrice"/>
+	<property name="btotalPrice"  type="float"   column="btotalPrice"/>
+	<property name="mpayment"  type="float" 	column="mpayment"/>
+	<property name="bpayment"  type="float" 	column="bpayment"/>  
+	<property name="area"  type="string" 	column="area"/> 
+	<property name="sales"  type="string" 	column="sales"/> 
+	<property name="flools"  type="string" 	column="floors"/> 
+	<property name="xiaoqu"  type="string" 	column="xiaoqu"/>
+	<property name="houseAge"  type="string" 	column="houseAge"/>
+	<property name="needgoal"  type="string" 	column="needgoal"/>  
+	<property name="toward"  type="string" 	column="toward"/> 
+	<property name="rentalprice"  type="float" 	column="rentalprice"/> 
+	<property name="decoration"  type="string" 	column="decoration"/>
+	<property name="rentway"  type="string" 	column="rentway"/>
+	<property name="sexRequirement"  type="string" 	column="sexRequirement"/>
+	<property name="housetype"  type="string" 	column="housetype"/>
+	<property name="room"  type="integer" 	column="room"/>
+	<property name="hall"  type="integer" 	column="hall"/>
+	<property name="washroom"  type="integer" 	column="washroom"/>
+	<property name="houseconfig"  type="string" 	column="houseconfig"/>
+  </class>
+
+  <class name="com.huzhiyi.housereadily.model.FeileiUrl" table="feilei" >
+  	<id name="urlClassId" column="CLASSID">
+	   <generator class="identity"/>
+   </id> 
+   <property name="urlClassName"  type="string" 	column="CLASSNAME"/>
+   <property name="urlLevel"  type="integer" 	column="LEVEL"/> 
+   <property name="urlTopClass"  type="integer" 	column="TOPCLASS"/>
+   <property name="urlVerity"  type="integer" 	column="VERITY"/> 
+   <property name="urlMemo"  type="string" 	column="MEMO"/> 
+ </class>
+  
+ <class name="com.huzhiyi.housereadily.model.DetailURL" table="detail" >
+  	<id name="urlId" column="ID">
+	   <generator class="identity"/>
+   </id> 
+   <property name="urlClassId"  type="integer" 	column="CLASSID"/>
+   <property name="urlTitle"  type="string" 	column="TITLE"/> 
+   <property name="urlInfo"  type="string" 	column="URL"/>
+   <property name="urlVerity"  type="integer" 	column="VERITY"/>
+   <property name="urlMemo"  type="string" 	column="MEMO"/> 
+   <property name="urlEmail"  type="string" 	column="EMAIL"/>
+   <property name="urlTopId"  type="integer" 	column="TOPID"/> 
+   <property name="urlTj"  type="integer" 	column="TJ"/> 
+ </class>
+
+ <class name="com.huzhiyi.housereadily.model.CSuggestions" table="users_suggestions" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="userId"  type="integer" column="userId"/> 
+   <property name="userName"  type="string" column="userName"/>
+   <property name="title"  type="string" column="title"/>
+   <property name="content"  type="string" column="content"/>
+   <property name="isRead"  type="integer" column="isRead"/>
+   <property name="isAdminRead"  type="integer" column="isAdminRead"/>
+   <property name="insertTime"  type="timestamp" column="InsertTime"/>
+   <property name="level"  type="integer" column="level"/>
+   <property name="pid"  type="integer" column="pid"/>
+   <property name="lastContent"  type="string" column="lastContent"/>
+   <property name="lastInsertTime"  type="timestamp" column="lastInsertTime"/>
+   <property name="lastName"  type="string" column="lastName"/>
+   <property name="lastViewTime"  type="timestamp" column="lastViewTime"/>
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CCustomersSms" table="customers_sms" >
+  <id name="id" column="id">
+	   <generator class="identity"/>
+   </id> 
+    <property name="content"  type="string" 	column="content"/> 
+	<property name="mobiles"  type="string" 	column="mobiles"/> 
+	<property name="status"  type="integer" 	column="status"/> 
+	<property name="insertTime"  type="timestamp" 	column="insertTime"/> 
+	<property name="userId"  type="integer" 	column="userId"/> 
+	<property name="userName"  type="string" 	column="userName"/> 
+	<property name="smsCount"  type="integer" 	column="smsCount"/>
+	<property name="deleted"  type="integer" 	column="deleted"/> 
+	<property name="deleteTime"  type="timestamp" 	column="deleteTime"/> 
+	<property name="ctype"  type="integer" 	column="ctype"/> 
+  </class>
+  
+  <class name="com.huzhiyi.housereadily.model.CHouseConfirm" table="house_confirm" >
+  <id name="id" column="id">
+	   <generator class="identity"/>
+   </id> 
+    <property name="houseId"  type="int" 	column="houseId"/> 
+	<property name="userId"  type="integer" 	column="userId"/> 
+	<property name="insertTime"  type="timestamp" 	column="insertTime"/> 
+	<property name="confirmTime"  type="timestamp" 	column="confirmTime"/>
+	<property name="costMoble"  type="string" 	column="costMoble"/>  
+	<property name="costomerts"  type="string" 	column="costomerts"/>
+	<property name="remark"  type="string" 	column="remark"/> 
+  </class>
+  
+     <class name="com.huzhiyi.housereadily.model.CHousePics" table="house_pics" >
+  <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="userId"  type="integer"    	column="userId"   /> 
+   <property name="userName"  type="string"    	column="userName"   /> 
+   <property name="communityCode"  type="string"    	column="communityCode"   /> 
+   <property name="picType"  type="integer"    	column="picType"   /> 
+   <property name="communityType"  type="integer"    	column="communityType"   /> 
+   <property name="pic"  type="string"    	column="pic"   /> 
+   <property name="picMd5"  type="string"    	column="picMd5"   /> 
+   <property name="share"  type="integer"    	column="share"   /> 
+   <property name="deleted"  type="integer"    	column="deleted"   /> 
+   <property name="adminName"  type="string"    	column="adminName"   /> 
+   <property name="insertTime"  type="timestamp"    	column="insertTime"   /> 
+   <property name="checkTime"  type="timestamp"    	column="checkTime"   /> 
+   <property name="deleteTime"  type="timestamp"    	column="deleteTime"   /> 
+   <property name="cityCode"  type="integer"    	column="cityCode"   /> 
+   <property name="imageServer"  type="integer" 	column="imageServer"/>
+ </class>
+ 
+  <class name="com.huzhiyi.housereadily.model.CHouseProTemplate" table="house_pro_template">
+ 	<id name="id" column="id">
+ 		 <generator class="identity"/>
+ 	</id>
+ 	<property name="title" type="string" column="Title"/>
+   <property name="stype" type="integer" column="Stypes"/>
+   <property name="bulidType" type="integer" column="BuildType"/>
+   <property name="proType" type="integer" 	column="ProType"/> 
+  	<property name="feature" type="string" column="Feature"/>
+   <property name="insertTime" type="timestamp" column="InsertTime"/>
+   <property name="context" type="string" column="Context"/>
+   <property name="deleted" type="integer" column="Deleted"/>
+   <property name="deleteTime" type="timestamp" column="DeleteTime"/>
+    <property name="enable" type="integer" column="Enable"/>
+    <property name="userCount" type="integer" column="userCount"/>
+ </class>
+ <!-- sana add-->
+ <!--
+ <class name="com.huzhiyi.housereadily.model.CHouseHistoryViewId" table="house_historys_viewid" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>   
+   <property name="innerNo"  type="string" 	column="innerNo"/>   
+   <property name="serialNo"  type="integer" 	column="SerialNo"/> 
+   <property name="viewUrl"  type="string" 	column="viewUrl"/>
+   <property name="viewId"  type="string" 	column="viewId"/>
+   <property name="viewExtend"  type="string" 	column="viewExtend"/>
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="insertTime"  type="timestamp"    	column="InsertTime"   /> 
+   <property name="updateTime"  type="timestamp"    	column="updateTime"   /> 
+   <property name="errorCode"  type="integer" 	column="errorCode"/>
+   <property name="description"  type="string" 	column="description"/>
+   <property name="PublishRemark"  type="string" 	column="PublishRemark"/>
+   <property name="autoDeleted"  type="integer" 	column="AutoDeleted"/>
+   
+ </class>
+ 
+  --><class name="com.huzhiyi.housereadily.model.CHouseHistoryViewIdHn" table="house_historys_viewid_Hn" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>   
+   <property name="innerNo"  type="string" 	column="innerNo"/>   
+   <property name="serialNo"  type="integer" 	column="SerialNo"/> 
+   <property name="viewUrl"  type="string" 	column="viewUrl"/>
+   <property name="viewId"  type="string" 	column="viewId"/>
+   <property name="viewExtend"  type="string" 	column="viewExtend"/>
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="insertTime"  type="timestamp"    	column="InsertTime"   /> 
+   <property name="updateTime"  type="timestamp"    	column="updateTime"   /> 
+   <property name="errorCode"  type="integer" 	column="errorCode"/>
+   <property name="description"  type="string" 	column="description"/>
+   <property name="PublishRemark"  type="string" 	column="PublishRemark"/>
+   <property name="autoDeleted"  type="integer" 	column="AutoDeleted"/>
+   
+ </class>
+ 
+   <class name="com.huzhiyi.housereadily.model.CHouseHistoryViewIdHz" table="house_historys_viewid_Hz" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>   
+   <property name="innerNo"  type="string" 	column="innerNo"/>   
+   <property name="serialNo"  type="integer" 	column="SerialNo"/> 
+   <property name="viewUrl"  type="string" 	column="viewUrl"/>
+   <property name="viewId"  type="string" 	column="viewId"/>
+   <property name="viewExtend"  type="string" 	column="viewExtend"/>
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="insertTime"  type="timestamp"    	column="InsertTime"   /> 
+   <property name="updateTime"  type="timestamp"    	column="updateTime"   /> 
+   <property name="errorCode"  type="integer" 	column="errorCode"/>
+   <property name="description"  type="string" 	column="description"/>
+   <property name="PublishRemark"  type="string" 	column="PublishRemark"/>
+   <property name="autoDeleted"  type="integer" 	column="AutoDeleted"/>
+   
+ </class>
+   <class name="com.huzhiyi.housereadily.model.CHouseHistoryViewIdHb" table="house_historys_viewid_Hb" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>   
+   <property name="innerNo"  type="string" 	column="innerNo"/>   
+   <property name="serialNo"  type="integer" 	column="SerialNo"/> 
+   <property name="viewUrl"  type="string" 	column="viewUrl"/>
+   <property name="viewId"  type="string" 	column="viewId"/>
+   <property name="viewExtend"  type="string" 	column="viewExtend"/>
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="insertTime"  type="timestamp"    	column="InsertTime"   /> 
+   <property name="updateTime"  type="timestamp"    	column="updateTime"   /> 
+   <property name="errorCode"  type="integer" 	column="errorCode"/>
+   <property name="description"  type="string" 	column="description"/>
+   <property name="PublishRemark"  type="string" 	column="PublishRemark"/>
+   <property name="autoDeleted"  type="integer" 	column="AutoDeleted"/>
+ </class>
+ 
+  <class name="com.huzhiyi.housereadily.model.CHouseWebsitesRegsMapping" table="house_websites_regs_mapping" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="serialNo"  type="integer" 	column="SerialNo"/> 
+   <property name="userId"  type="integer" 	column="userId"/>
+ </class>
+ 
+   <class name="com.huzhiyi.housereadily.model.CUserSmsHistory" table="users_sms_history" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="balance"  type="integer" 	column="balance"/> 
+   <property name="mtype"  type="integer" 	column="mtype"/> 
+   <property name="ctype"  type="integer" 	column="ctype"/>
+   <property name="remark"  type="string" 	column="Remark"/>
+   <property name="operateTime"  type="timestamp"    	column="operateTime"   /> 
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="userName"  type="string" 	column="userName"/> 
+ </class>
+ 
+  <class name="com.huzhiyi.housereadily.model.CUserPaymentFinance" table="users_payment_finance" >
+   <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>      
+   <property name="balance"  type="double" 	column="balance"/> 
+   <property name="mtype"  type="integer" 	column="mtype"/> 
+   <property name="ctype"  type="integer" 	column="ctype"/>
+   <property name="money"  type="double" 	column="money"/> 
+   <property name="remark"  type="string" 	column="Remark"/>
+   <property name="operateTime"  type="timestamp"    	column="operateTime"   /> 
+   <property name="userId"  type="integer" 	column="userId"/>
+   <property name="userName"  type="string" 	column="userName"/>
+   <property name="cityCode"  type="integer" 	column="cityCode"/>
+   <property name="orderId"  type="string" 	column="orderId"/>
+ </class>
+ 
+ <class name="com.huzhiyi.housereadily.model.CClientsHouse" table="clients_house" >
+  <id name="id" column="id">
+	   <generator class="identity"/>
+   </id>
+   <property name="innerNo"  type="string" 	column="innerNo"/> 
+	<property name="serialNo"  type="string" 	column="serialNo"/> 
+	<property name="userId"  type="integer" 	column="userId"/> 
+	<property name="repeatType"  type="integer" 	column="repeatType"/> 
+	<property name="preSchedulerTime"  type="timestamp" 	column="preSchedulerTime"/>
+	<property name="schedulerTime"  type="timestamp" 	column="schedulerTime"/> 
+	<property name="status"  type="integer" 	column="status"/> 
+	<property name="successCount"  type="integer" 	column="successCount"/> 
+	<property name="failCount"  type="integer" 	column="failCount"/> 
+	<property name="deleted"  type="integer" 	column="deleted"/> 
+	<property name="deleteTime"  type="timestamp" 	column="deleteTime"/> 
+	<property name="insertTime"  type="timestamp" 	column="insertTime"/> 
+	<property name="updateTime"  type="timestamp" 	column="updateTime"/> 
+	<property name="startTime"  type="timestamp" 	column="startTime"/> 
+	<property name="finishTime"  type="timestamp" 	column="finishTime"/>  
+	<property name="title"  type="string" 	column="title"/> 
+	<property name="statusRemark"  type="string" 	column="statusRemark"/>  
+	<property name="websites"  type="string" 	column="websites"/>  
+	<property name="repeatTime"  type="string" 	column="repeatTime"/> 
+	<property name="userName"  type="string" 	column="userName"/>
+	<property name="stype"  type="integer" 	column="stype"/> 
+	<property name="schedulerHistoryId"  type="integer" 	column="schedulerHistoryId"/> 
+	<property name="serverType"  type="integer" 	column="serverType"/> 
+ </class>
+ 
+ 	<class name="com.huzhiyi.housereadily.model.SenvenAct" table="seven_act">
+		<id name="id" column="Id">
+ 		 	<generator class="identity"/>
+ 		</id>
+ 		<property name="userId" type="integer" column="userId"/>
+ 		<property name="moblie" type="string" column="moblie"/>
+ 		<property name="wiboNo" type="string" column="wiboNo"/>
+ 		<property name="invitationCode" type="string" column="invitationCode"/>
+ 		<property name="type" type="string" column="type"/>
+	</class>
+	
+</hibernate-mapping>

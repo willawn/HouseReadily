@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+/*$.get(encodeURI("http://www.youdao.com/smartresult-xml/search.s?jsFlag=true&keyfrom=163.com&event=fYodaoCallBack&type=ip&q=115.199.143.118"), function(data){
+    	alert('=====333======='+data);
+    });*/
+    
+    $.ajax({
+		 url:encodeURI("www.youdao.com/smartresult-xml/search.s?jsFlag=true&keyfrom=163.com&type=ip&q=115.199.143.118"),
+		 type:'GET',
+		 timeout:3000,
+		 dataType:'html',
+		 async:false,
+		 error:function (data){
+			 alert('=====111======='+data);
+		 },
+		 success:function (data){
+			alert('=====222======='+data);
+		 }
+	});
+</script>
+</head>
+
+<body>
+</body>
+</html>

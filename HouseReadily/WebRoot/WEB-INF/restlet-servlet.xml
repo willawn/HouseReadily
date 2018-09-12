@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="component.context" class="org.springframework.beans.factory.config.PropertyPathFactoryBean" />
+
+	<bean id="componentChildContext" class="org.restlet.Context">
+		<lookup-method name="createChildContext" bean="component.context" />
+	</bean>
+
+	<bean id="component" class="org.restlet.ext.spring.SpringComponent">
+		<property name="defaultHost" ref="defaultHost" />
+	</bean>
+
+	<bean id="defaultHost" class="org.restlet.ext.spring.SpringHost">
+		<constructor-arg ref="component" />
+		<property name="defaultAttachment" ref="defaultApplication" />
+	</bean>
+
+
+	<bean id="defaultApplication" class="org.restlet.Application">
+		<constructor-arg ref="componentChildContext" />
+	</bean>
+
+	<bean name="root" class="com.huzhiyi.housereadily.filter.CommonFilter">
+		<property name="next" ref="root1" />
+	</bean>
+
+	<bean name="root1" class="org.restlet.ext.spring.SpringRouter">
+
+		<property name="attachments">
+			<map>
+				<entry key="/usercheck">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="userCheckResource" />
+					</bean>
+				</entry>
+				<entry key="/user/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="userResource" />
+					</bean>
+				</entry>
+				<entry key="/houseReadily/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="houseReadilyResource" />
+					</bean>
+				</entry>
+				<entry key="/houseFollow/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="houseFollowResource" />
+					</bean>
+				</entry>
+				<entry key="/customer/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="customerResource" />
+					</bean>
+				</entry>
+				<entry key="/cityArea/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="cityAreaResource" />
+					</bean>
+				</entry>
+				<entry key="/feedback/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="feedbackResource" />
+					</bean>
+				</entry>
+				<entry key="/broker/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="brokerResource" />
+					</bean>
+				</entry>
+				<entry key="/task/{userId}">
+					<bean class="org.restlet.ext.spring.SpringFinder">
+						<lookup-method name="create" bean="taskResource" />
+					</bean>
+				</entry>
+				<entry key="/project">
+				   <bean class="org.restlet.ext.spring.SpringFinder">  
+                       <lookup-method name="create" bean="projectResource" />  
+                   </bean> 
+                </entry>
+                <entry key="/baseGroup/{userId}">
+				   <bean class="org.restlet.ext.spring.SpringFinder">  
+                       <lookup-method name="create" bean="baseGroupResource" />  
+                   </bean> 
+                </entry>
+                <entry key="/auditMemberGroup/{userId}">
+				   <bean class="org.restlet.ext.spring.SpringFinder">  
+                       <lookup-method name="create" bean="auditMemberGroupResource" />  
+                   </bean> 
+                </entry>
+                <entry key="/memberGroup/{userId}">
+				   <bean class="org.restlet.ext.spring.SpringFinder">  
+                       <lookup-method name="create" bean="memberGroupResource" />  
+                   </bean> 
+                </entry>
+                <entry key="/messageGroup/{userId}">
+				   <bean class="org.restlet.ext.spring.SpringFinder">  
+                       <lookup-method name="create" bean="messageGroupResource" />  
+                   </bean> 
+                </entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="tastyConfigAction" class="com.huzhiyi.housereadily.action.TastyConfigAction">
+		<property name="tastyService" ref="tastyService" />
+	</bean>
+
+	<bean id="baseResource" class="com.huzhiyi.housereadily.resource.BaseResource" scope="prototype">
+		<property name="tastyConfigAction" ref="tastyConfigAction" />
+		<property name="tastyService" ref="tastyService" />
+	</bean>
+	
+	<bean id="listResource" class="com.huzhiyi.housereadily.resource.ListResource" parent="baseResource"/>
+
+	<bean id="userCheckResource" class="com.huzhiyi.housereadily.resource.UserCheckResource" parent="baseResource">
+		<property name="userService" ref="userService" />
+		<property name="codeService" ref="codeService" />
+	</bean>
+
+	<bean id="userResource" class="com.huzhiyi.housereadily.resource.UserResource" parent="baseResource">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="taskService">
+			<ref bean="taskService" />
+		</property>
+	</bean>
+
+	<bean id="houseReadilyResource" class="com.huzhiyi.housereadily.resource.HouseReadilyResource" parent="baseResource">
+		<property name="houseReadilyService">
+			<ref bean="houseReadilyService" />
+		</property>
+	</bean>
+	<bean id="houseFollowResource" class="com.huzhiyi.housereadily.resource.HouseFollowResource" parent="baseResource">
+		<property name="houseFollowService">
+			<ref bean="houseFollowService" />
+		</property>
+	</bean>
+	<bean id="customerResource" class="com.huzhiyi.housereadily.resource.CustomerResource" parent="baseResource">
+		<property name="customerService">
+			<ref bean="customerService" />
+		</property>
+	</bean>
+	<bean id="cityAreaResource" class="com.huzhiyi.housereadily.resource.CityAreaResource" parent="baseResource">
+	</bean>
+	<bean id="feedbackResource" class="com.huzhiyi.housereadily.resource.FeedbackResource" parent="baseResource">
+		<property name="feedbackService">
+			<ref bean="feedbackService" />
+		</property>
+	</bean>
+	<bean id="brokerResource" class="com.huzhiyi.housereadily.resource.BrokerResource" parent="baseResource">
+		<property name="brokerService">
+			<ref bean="brokerService" />
+		</property>
+	</bean>
+	<bean id="taskResource" class="com.huzhiyi.housereadily.resource.TaskResource" parent="baseResource">
+		<property name="taskService">
+			<ref bean="taskService" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+	</bean>
+	<bean id="baseGroupResource" class="com.huzhiyi.housereadily.resource.BaseGroupResource" parent="baseResource">
+		<property name="baseGroupService">
+			<ref bean="baseGroupService" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+	</bean>
+	<bean id="auditMemberGroupResource" class="com.huzhiyi.housereadily.resource.AuditMemberGroupResource" parent="baseResource">
+		<property name="auditMemberGroupService">
+			<ref bean="auditMemberGroupService" />
+		</property>
+		<property name="memberGroupService">
+			<ref bean="memberGroupService" />
+		</property>
+		<property name="baseGroupService">
+			<ref bean="baseGroupService" />
+		</property>
+	</bean>
+	<bean id="memberGroupResource" class="com.huzhiyi.housereadily.resource.MemberGroupResource" parent="baseResource">
+		<property name="memberGroupService">
+			<ref bean="memberGroupService" />
+		</property>
+		<property name="baseGroupService">
+			<ref bean="baseGroupService" />
+		</property>
+	</bean>
+	<bean id="messageGroupResource" class="com.huzhiyi.housereadily.resource.MessageGroupResource" parent="baseResource">
+		<property name="messageGroupService">
+			<ref bean="messageGroupService" />
+		</property>
+		<property name="baseGroupService">
+			<ref bean="baseGroupService" />
+		</property>
+		<property name="memberGroupService">
+			<ref bean="memberGroupService" />
+		</property>
+		<property name="customerService">
+			<ref bean="customerService" />
+		</property>
+		<property name="houseReadilyService">
+			<ref bean="houseReadilyService" />
+		</property>
+	</bean>
+	<bean id="projectResource" class="com.huzhiyi.housereadily.resource.ProjectResource" parent="listResource"/>
+</beans>

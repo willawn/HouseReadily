@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Service Bean -->
+	<bean id="houseReadilyService" class="com.huzhiyi.housereadily.biz.impl.HouseReadilyServiceImpl">
+		<property name="houseReadilyDAO">
+			<ref bean="houseReadilyDAO" />
+		</property>
+		<property name="houseAttachmentService">
+			<ref bean="houseAttachmentService" />
+		</property>
+		<property name="projectService">
+			<ref bean="projectService" />
+		</property>
+		<property name="houseOwnerService">
+			<ref bean="houseOwnerService" />
+		</property>
+		<property name="houseFollowService">
+			<ref bean="houseFollowService" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+		<property name="userExtService">
+			<ref bean="userExtService" />
+		</property>
+		<property name="customerDAO">
+			<ref bean="customerDAO" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+	</bean>
+	<bean id="houseFollowService" class="com.huzhiyi.housereadily.biz.impl.HouseFollowServiceImpl">
+		<property name="houseFollowDAO">
+			<ref bean="houseFollowDAO" />
+		</property>
+		<property name="houseReadilyDAO">
+			<ref bean="houseReadilyDAO" />
+		</property>
+		<property name="customerDAO">
+			<ref bean="customerDAO" />
+		</property>
+	</bean>
+	<bean id="customerService" class="com.huzhiyi.housereadily.biz.impl.CustomerServiceImpl">
+		<property name="customerDAO">
+			<ref bean="customerDAO" />
+		</property>
+		<property name="houseOwnerService">
+			<ref bean="houseOwnerService" />
+		</property>
+		<property name="houseReadilyService">
+			<ref bean="houseReadilyService" />
+		</property>
+		<property name="houseFollowService">
+			<ref bean="houseFollowService" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="userExtService">
+			<ref bean="userExtService" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+	</bean>
+	<bean id="houseAttachmentService" class="com.huzhiyi.housereadily.biz.impl.HouseAttachmentServiceImpl">
+		<property name="houseAttachmentDAO">
+			<ref bean="houseAttachmentDAO" />
+		</property>
+	</bean>
+	<bean id="userService" class="com.huzhiyi.housereadily.biz.impl.UserServiceImpl">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+		<property name="userExtService">
+			<ref bean="userExtService" />
+		</property>
+		<property name="systemLogService">
+			<ref bean="systemLogService" />
+		</property>
+		<property name="codeService">
+			<ref bean="codeService" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+		<property name="houseReadilyService">
+			<ref bean="houseReadilyService" />
+		</property>
+	</bean>
+	<bean id="projectService" class="com.huzhiyi.housereadily.biz.impl.ProjectServiceImpl">
+		<property name="projectDAO">
+			<ref bean="projectDAO" />
+		</property>
+	</bean>
+	<bean id="houseOwnerService" class="com.huzhiyi.housereadily.biz.impl.HouseOwnerServiceImpl">
+		<property name="houseOwnerDAO">
+			<ref bean="houseOwnerDAO" />
+		</property>
+	</bean>
+	<bean id="feedbackService" class="com.huzhiyi.housereadily.biz.impl.FeedbackServiceImpl">
+		<property name="feedbackDAO">
+			<ref bean="feedbackDAO" />
+		</property>
+	</bean>
+	<bean id="brokerService" class="com.huzhiyi.housereadily.biz.impl.BrokerServiceImpl">
+		<property name="brokerDAO">
+			<ref bean="brokerDAO" />
+		</property>
+	</bean>
+	<bean id="systemLogService" class="com.huzhiyi.housereadily.biz.impl.SystemLogServiceImpl">
+		<property name="systemLogDAO">
+			<ref bean="systemLogDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	<bean id="operateLogService" class="com.huzhiyi.housereadily.biz.impl.OperateLogServiceImpl">
+		<property name="operateLogDAO">
+			<ref bean="operateLogDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	<bean id="codeService" class="com.huzhiyi.housereadily.biz.impl.CodeServiceImpl">
+		<property name="codeDAO">
+			<ref bean="codeDAO" />
+		</property>
+	</bean>
+	<bean id="userExtService" class="com.huzhiyi.housereadily.biz.impl.UserExtServiceImpl">
+		<property name="userExtDAO">
+			<ref bean="userExtDAO" />
+		</property>
+		<property name="houseReadilyDAO">
+			<ref bean="houseReadilyDAO" />
+		</property>
+		<property name="customerDAO">
+			<ref bean="customerDAO" />
+		</property>
+	</bean>
+	<bean id="taskService" class="com.huzhiyi.housereadily.biz.impl.TaskServiceImpl">
+		<property name="taskDAO">
+			<ref bean="taskDAO" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+	</bean>
+	<bean id="taskLogService" class="com.huzhiyi.housereadily.biz.impl.TaskLogServiceImpl">
+		<property name="taskLogDAO">
+			<ref bean="taskLogDAO" />
+		</property>
+		<property name="taskDAO">
+			<ref bean="taskDAO" />
+		</property>
+		<property name="userExtService">
+			<ref bean="userExtService" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	<bean id="auditMemberGroupService" class="com.huzhiyi.housereadily.biz.impl.AuditMemberGroupServiceImpl">
+		<property name="auditMemberGroupDAO">
+			<ref bean="auditMemberGroupDAO" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="baseGroupDAO">
+			<ref bean="baseGroupDAO" />
+		</property>
+		<property name="memberGroupCodeService">
+			<ref bean="memberGroupCodeService" />
+		</property>
+		<property name="memberGroupService">
+			<ref bean="memberGroupService" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+	</bean>
+	<bean id="baseGroupService" class="com.huzhiyi.housereadily.biz.impl.BaseGroupServiceImpl">
+		<property name="baseGroupDAO">
+			<ref bean="baseGroupDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+		<property name="memberGroupService">
+			<ref bean="memberGroupService" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+	</bean>
+	<bean id="memberGroupService" class="com.huzhiyi.housereadily.biz.impl.MemberGroupServiceImpl">
+		<property name="memberGroupDAO">
+			<ref bean="memberGroupDAO" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+		<property name="baseGroupDAO">
+			<ref bean="baseGroupDAO" />
+		</property>
+		<property name="messageGroupService">
+			<ref bean="messageGroupService" />
+		</property>
+	</bean>
+	<bean id="memberGroupCodeService" class="com.huzhiyi.housereadily.biz.impl.MemberGroupCodeServiceImpl">
+		<property name="memberGroupCodeDAO">
+			<ref bean="memberGroupCodeDAO" />
+		</property>
+	</bean>
+	<bean id="messageGroupService" class="com.huzhiyi.housereadily.biz.impl.MessageGroupServiceImpl">
+		<property name="messageGroupDAO">
+			<ref bean="messageGroupDAO" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+		<property name="operateLogService">
+			<ref bean="operateLogService" />
+		</property>
+		<property name="houseReadilyDAO">
+			<ref bean="houseReadilyDAO" />
+		</property>
+		<property name="customerDAO">
+			<ref bean="customerDAO" />
+		</property>
+		<property name="baseGroupDAO">
+			<ref bean="baseGroupDAO" />
+		</property>
+		<property name="houseAttachmentService">
+			<ref bean="houseAttachmentService" />
+		</property>
+		<property name="userExtService">
+			<ref bean="userExtService" />
+		</property>
+		<property name="taskLogService">
+			<ref bean="taskLogService" />
+		</property>
+	</bean>
+	<bean id="applyService" class="com.huzhiyi.housereadily.biz.impl.ApplyServiceImpl">
+		<property name="applyDAO">
+			<ref bean="applyDAO" />
+		</property>
+	</bean>
+
+	<!-- DAO Bean -->
+	<bean id="baseDAO" class="com.huzhiyi.comm.dao.HibernateBaseDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="houseReadilyDAO" class="com.huzhiyi.housereadily.dao.impl.HouseReadilyDAOImpl" parent="baseDAO" />
+	<bean id="houseFollowDAO" class="com.huzhiyi.housereadily.dao.impl.HouseFollowDAOImpl" parent="baseDAO" />
+	<bean id="customerDAO" class="com.huzhiyi.housereadily.dao.impl.CustomerDAOImpl" parent="baseDAO" />
+	<bean id="houseAttachmentDAO" class="com.huzhiyi.housereadily.dao.impl.HouseAttachmentDAOImpl" parent="baseDAO" />
+	<bean id="userDAO" class="com.huzhiyi.housereadily.dao.impl.UserDAOImpl" parent="baseDAO" />
+	<bean id="projectDAO" class="com.huzhiyi.housereadily.dao.impl.ProjectDAOImpl" parent="baseDAO" />
+	<bean id="houseOwnerDAO" class="com.huzhiyi.housereadily.dao.impl.HouseOwnerDAOImpl" parent="baseDAO" />
+	<bean id="feedbackDAO" class="com.huzhiyi.housereadily.dao.impl.FeedbackDAOImpl" parent="baseDAO" />
+	<bean id="brokerDAO" class="com.huzhiyi.housereadily.dao.impl.BrokerDAOImpl" parent="baseDAO" />
+	<bean id="systemLogDAO" class="com.huzhiyi.housereadily.dao.impl.SystemLogDAOImpl" parent="baseDAO" />
+	<bean id="operateLogDAO" class="com.huzhiyi.housereadily.dao.impl.OperateLogDAOImpl" parent="baseDAO" />
+	<bean id="codeDAO" class="com.huzhiyi.housereadily.dao.impl.CodeDAOImpl" parent="baseDAO" />
+	<bean id="userExtDAO" class="com.huzhiyi.housereadily.dao.impl.UserExtDAOImpl" parent="baseDAO" />
+	<bean id="taskDAO" class="com.huzhiyi.housereadily.dao.impl.TaskDAOImpl" parent="baseDAO" />
+	<bean id="taskLogDAO" class="com.huzhiyi.housereadily.dao.impl.TaskLogDAOImpl" parent="baseDAO" />
+	<bean id="auditMemberGroupDAO" class="com.huzhiyi.housereadily.dao.impl.AuditMemberGroupDAOImpl" parent="baseDAO" />
+	<bean id="baseGroupDAO" class="com.huzhiyi.housereadily.dao.impl.BaseGroupDAOImpl" parent="baseDAO" />
+	<bean id="memberGroupDAO" class="com.huzhiyi.housereadily.dao.impl.MemberGroupDAOImpl" parent="baseDAO" />
+	<bean id="memberGroupCodeDAO" class="com.huzhiyi.housereadily.dao.impl.MemberGroupCodeDAOImpl" parent="baseDAO" />
+	<bean id="messageGroupDAO" class="com.huzhiyi.housereadily.dao.impl.MessageGroupDAOImpl" parent="baseDAO" />
+	<bean id="applyDAO" class="com.huzhiyi.housereadily.dao.impl.ApplyDAOImpl" parent="baseDAO" />
+</beans>
+

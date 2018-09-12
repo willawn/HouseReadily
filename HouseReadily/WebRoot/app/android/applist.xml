@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<applist>
+	<phone>
+		<app>
+			<id>housereadily</id>
+			<name>随手房</name>
+			<description>1. 随手房1.0版本发布</description>
+			<version>1.0</version>
+			<icon>http://42.121.118.76/HouseReadily/app/icon/icon1.png</icon>
+			<url>http://42.121.118.76/HouseReadily/app/android/housereadily.apk</url>
+		</app>
+		<app>
+			<id>fangzongguan</id>
+			<name>房总管</name>
+			<description>1. 房总管2.0版本更新</description>
+			<version>2.0</version>
+			<icon>http://42.121.118.76/HouseReadily/app/icon/icon2.png</icon>
+			<url>http://42.121.118.76/HouseReadily/app/android/fangzongguan.apk</url>
+		</app>
+		<app>
+			<id>fangchanzushou</id>
+			<name>房产助手</name>
+			<description>1. 房产助手2.0版本发布</description>
+			<version>1.0</version>
+			<icon>http://42.121.118.76/HouseReadily/app/icon/icon3.png</icon>
+			<url>http://42.121.118.76/HouseReadily/app/android/fangchanzushou.apk</url>
+		</app>
+		<app>
+			<id>yyhouse</id>
+			<name>YY找房</name>
+			<description>1. YY找房2.0版本发布</description>
+			<version>1.0</version>
+			<icon>http://42.121.118.76/HouseReadily/app/icon/icon4.png</icon>
+			<url>http://42.121.118.76/HouseReadily/app/android/yyhouse.apk</url>
+		</app>
+	</phone>
+	<pad>
+		<app>
+			<id>zushou365</id>
+			<name>租售365</name>
+			<description>1. 租售3651.0版本发布</description>
+			<version>1.0</version>
+			<icon>http://42.121.118.76/HouseReadily/app/icon/icon5.png</icon>
+			<url>http://42.121.118.76/HouseReadily/app/android/zushou365.apk</url>
+		</app>
+	</pad>
+</applist>

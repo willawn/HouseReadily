@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ice="http://ns.adobe.com/incontextediting">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>随手房</title>
+<script src="js/jquery-1.4.2.js" type="text/javascript"></script>
+<!--
+<script type="text/javascript" async="" src="ga.js"></script>
+<script type="text/javascript" src="gongneng.js"></script>
+-->
+<!--<link href="Untitled-3.css" type="text/css" rel="stylesheet" />-->
+<link rel="stylesheet" href="css/reset.css?2.0" />
+<link rel="stylesheet" href="css/common.css?2.0" />
+<!--
+<link rel="stylesheet" href="gongneng.css?2.0" />
+-->
+<style>
+/*-------------------------------------------------------------------------banner代码---------------------------*/
+#banner,#banner_free {
+	width: auto;
+	height: 632px;
+	border-bottom: #3ba5e1 1px solid;
+}
+.banner_m {
+	width: 960px;
+	background: url(images/随手房改.jpg) left top no-repeat;
+	margin: 0 auto;
+	height: 632px;
+	
+	
+}
+#banner_free .banner_m{
+	background: url(../img/banner_free.png) left top no-repeat;
+}
+.banner_m p {
+	font-size: 15px;
+	color: #3b648a;
+	line-height: 19px;
+	margin-left: 41px;
+}
+.banner_m a:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+.buy {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	cursor: pointer;
+	display: block;
+	background: url(../img/buy.png) no-repeat left top;
+}
+.download {
+	width: 140px;
+	height: 40px;
+	margin-left: 36px;
+	margin-right: 5px;
+	cursor: pointer;
+	display: inline-block;
+	text-indent:-999em;
+	background: url(../img/download.png) no-repeat left top;
+	vertical-align: text-bottom;
+}
+.download_p {
+	color: #fff;
+	position: relative;
+	left: 42px;
+	top: 20px;
+	text-decoration: none;
+}
+.download_p:hover {
+	text-decoration: underline;
+}
+.download:hover {
+	
+}
+/*-------------------------------------------------------------------------content代码---------------------------*/
+#content {
+	background: url(../img/m_bg.png) repeat-x left top;
+	width: auto;
+	height: 310px;
+	border-top: #FFF solid 1px;
+	border-bottom: #e6e6e6 dashed 1px;
+}
+.content_m {
+	width: 960px;
+	margin: 0 auto;
+	padding: 60px 0px 0px 50px;
+	;	}
+.content_mm {
+	float: left;
+	width: 265px;
+	display: inline;
+}
+.content_mm h2 {
+	border-left: #9acce8 solid 10px;
+	color: #068bb7;
+	font-size: 24px;
+	font-weight: normal;
+	padding-left: 8px;
+	margin: 0px;
+}
+.content_mm p {
+	color: #7f858a;
+	font-size: 15px;
+	line-height:25px;
+	margin-top: 5px;
+}
+.content_mm img {
+	margin-left: 5px;
+}
+.link {
+	margin-top: 54px;
+}
+.link_l {
+	font-size: 14px;
+	float: left;
+	display: inline;
+	color: #7f858a;
+}
+.link_l img {
+	margin: 2px 5px 1px 10px;
+	vertical-align: middle;
+	float: left;
+}
+.link_l a {
+	color: #7f858a;
+	float: left;
+}
+.link_l span {
+	float: left;
+	color: #068bb7;
+}
+.link_l a:hover {
+	color: #333;
+}
+.link_r a {
+	float: right;
+	color: #0f7ce2;
+	text-decoration: none;
+	font-size: 14px;
+	margin-right: 80px;
+	display: inline;
+}
+.link_r a:hover {
+	text-decoration: underline;
+	color: #25a0ff;
+}
+/*-------------------------------------------------------------------------footer代码---------------------------*/
+#copyright a {
+	color: #6d6d6d;
+	text-decoration: none;
+}
+#copyright {
+	width: 960px;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 10px;
+	color: #ccc;
+	font-size: 12px;
+}
+.footer {
+	height: 50x;
+	padding-top: 15px;
+}
+</style>
+
+
+<style>
+.menu{height:40px;background:url(images/menu_bg_1.gif) no-repeat -99px bottom;z-index:100;}
+.li_3{position:relative;z-index:100;}   
+.li_3_content{position:absolute;top:20px;left:0px;width:127px;line-height:40px;z-index:99;display:none;height:188px;*top:18px;}
+.li_3_content dt{height:17px;border-bottom:3px solid #417BAD;*height:19px;}
+.li_3_content dd{border-left:1px solid #E6E4E3;border-right:1px solid #E6E4E3;padding: 0 8px;background: #ffffff url(images/menu.gif) no-repeat bottom;}
+.li_3_content dd a{text-align:center;color:#666666;}
+.li_3_content a:hover{color:#f18336;}
+</style>
+
+<script>
+$(function(){
+        $(".menu li").hover(
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current = $(".menu li").index($(".first"));
+                        $(".menu").css("background-position",(100*current+1)+"px"+" bottom");
+                        $(".current").removeClass("lihover");
+                        $(".menu li").removeClass("first");
+                        $(this).addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+if(num != 4){
+                        	$(".menu").stop().animate({backgroundPosition:(100*num+1)+"px"+" bottom"},100*len);
+}
+else
+{
+ $(".menu").stop().animate({backgroundPosition:(100*num+1+28)+"px"+" bottom"},100*len);
+}
+              //          if(num == 3){
+              //                  $(".li_3_content").show();
+              //          };
+        /*      },
+                function(){
+                        var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(86*current+1)+"px"+" bottom"},100*len); */
+                }
+        );
+        
+        $(".li_3").hover(
+                function()
+                {
+
+                        $(".li_3_content").fadeIn(0);
+                },
+                function()
+                {
+                        $(".li_3_content").fadeOut(500,function(){
+$(".li_3_content").css("display","none");
+});
+                }
+        );
+
+
+        $(".menu").mouseleave(function(){
+        				var num = $(".menu li").index($(this));
+                        var current =  $(".menu li").index($(".current"));
+                        $(".menu li").removeClass("first");
+                        $(".current").addClass("first");
+                        var len = current - num;
+                        if(len <= 0){ len = -len ;};
+                        $(".menu").stop().animate({backgroundPosition:(100*current+1)+"px"+" bottom"},100*len);
+        });
+$(".noclick").click(function(event){
+event.preventDefault();
+});
+
+});
+
+  function adisplay(){
+document.getElementById("and_lay").style.display="block"; 
+  }
+  function adisappear(){
+document.getElementById("and_lay").style.display="none"; 
+  }
+  
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<!--    <ul class="menu">
+      <li ><a href="/" target="_self">首页</a></li>
+      <li class="licurrent"><a href="features.php" target="_self">功能</a></li>
+      <li ><a href="getrom.php" target="_self">下载</a></li>
+      <li><a href="http://zhuti.xiaomi.com/" target="_blank">主题</a></li>
+      <li><a class="licurrent" href="http://app.xiaomi.com/" target="_blank">应用</a></li>
+      <li><a  class="noborder " href="index.php" target="_self">论坛</a></li>
+    </ul>-->
+
+
+
+<ul class="menu" style="background-position: 0px 100%; ">
+        <li class="current first"><a href="http://www.miui.com/" target="_self">首页</a></li>
+      <li class=""><a href="" target="_self">功能</a></li>
+      <li class=""><a href="http://www.miui.com/getrom.php" target="_self">下载</a></li>
+               <li class="li_3"><a class="noclick" href="http://app.xiaomi.com/" target="_blank">更多产品</a>
+                <dl class="li_3_content">
+                        <dt></dt>
+                        <dd><a href="http://app.xiaomi.com/" target="_blank"><span>应用商店</span></a></dd>
+                        <dd><a href="http://zhuti.xiaomi.com/" target="_blank"><span>主题商店</span></a></dd>                        
+                        <dd><a href="http://app.miui.com/" target="_blank"><span>小米桌面</span></a></dd>
+                        <dd style="background-image:none;border-bottom:1px solid #E6E4E3;"><a style="border-bottom:none;" href="https://i.xiaomi.com/" target="_blank"><span>小米云服务</span></a></dd>
+                </dl>
+          </li>
+      <li><a class="noborder " href="http://www.miui.com/index.php" target="_self">论坛</a></li>
+    </ul>
+
+
+
+
+
+    <a href="http://www.miui.com/default.php"> <img title="随手房" class="miui_logo" src="images/随手房logo.png"></a>
+  </div>
+
+    <div id="banner" style="background:url(images/bg.png)">
+    	<div class="banner_all">
+
+    
+ <div class="banner_all">
+        	<div class="banner_m" >
+         
+      
+<div style="padding-top:525px; margin-left:175px; margin-right:auto;">
+
+<img src="iphone.png"  onmouseover="adisplay()" onmouseout="adisappear()"/>
+<img  style="margin-left:50px" src="安卓.png"  onmouseover="adisplay()" onmouseout="adisappear()"/>
+
+
+<div  class="iabox" style="margin-top:-385px; margin-left:620px; margin-right:auto;">
+<ul  class="layer" id="and_lay" onmouseover="adisplay()" onmouseout="adisappear()">
+                <li><span class="wandou"><a href="http://app " name="汽车报价大全" onclick="return wdapi_apkdl_m(this, 'source');"  title="通过豌豆荚下载">豌豆夹一键安装</a></span></li>
+                   <li><span class="qh360"><a title="使用360手机助手安装" href="zhushou http://a ">360手机助手安装</a></span></li>
+                   <li class="erwei"><img src="http://image.bitautoimg.com/wap/temp/qcbj/images/erweima.jpg" /><p><a href="http://a .apk">直接下载apk</a></p></li>
+                   <li><p>或各大应用市场<br/>搜索“汽车报价大全”</p></li>
+
+              </ul>
+</div>
+			</div>
+        </div>
+        
+        <div id="content">
+    	<div class="content_m">        	
+            <div class="content_mm">
+            	<h2>终生免费</h2>
+                <p>地产经纪人必备手机应用之一<br />无需抱着小本子,怕丢又不私密</p>
+            </div>
+            
+            <img style="float:left;margin-right:60px;" src="http://www.chepiaowuyou.com/static/img/line.png" />
+            
+            <div class="content_mm">
+            	<h2>随时随地查房源.客源</h2>
+                <p>还拿着小本子查客户信息？out了！<br />
+                Anyway、Anytime、Anywhere<br />
+                随处随心随时
+</p>
+            </div>
+            
+            <img style="float:left;margin-right:60px;"  src="http://www.chepiaowuyou.com/static/img/line.png" />
+            
+            <div class="content_mm">
+            	<h2>快速! 安全! 私密!</h2>
+                <p>客户分类管理，清晰明了
+<br />支持跟进记录，维系客户绝不遗忘
+<br />快速查找所需，简捷至极
+<br />用属于自己专用的房客源系统！</p>
+            </div>
+            
+            <div style="clear:both"></div>
+     
+        </div>
+    </div><!--content end-->
+
+        <div class="clear"></div>
+    </div><!--banner end-->
+   
+ 
+ 
+  <div class="footer"> 
+       <div id="copyright" style="padding-bottom:20px">
+        <p id="copyRightEn"><font color="#666666">Copyright © 2013 suishoufang.com. All Rights Reserved.</font></p>
+        </div>
+	</div>
+ 
+  <!-- end .container --></div>
+</body>
+</html>
